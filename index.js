@@ -1,5 +1,6 @@
 /****************** Dependencies ******************/
 const express = require('express')
+const rutasInicio = require('./routes/inicio')
 
 /****************** Enable Express ******************/
 const app = express()
@@ -13,9 +14,7 @@ app.set('view engine', 'pug');
 app.set('views','./views');
 
 /****************** Paths ******************/
-app.get('/', (req, res) => {
-    res.render('helloWorld')
-})
+app.use('/', rutasInicio);
 
 //Capture All 404 errors
 app.use( (req,res,next) => {
