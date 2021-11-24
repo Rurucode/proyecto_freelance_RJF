@@ -14,7 +14,7 @@ app.set('views','./views');
 
 /****************** Paths ******************/
 app.get('/', (req, res) => {
-    res.render('helloWorld')
+    res.render('./views/user.pug')
 })
 
 //Capture All 404 errors
