@@ -1,0 +1,21 @@
+CREATE TABLE usuarios (
+id_user serial NOT NULL PRIMARY KEY,
+nombre varchar(50) NOT NULL,
+email varchar(200) NOT NULL UNIQUE,
+contraseña varchar(25) NOT NULL,
+administrador boolean NOT NULL
+);
+
+SELECT * FROM usuarios;
+
+CREATE TABLE favoritos (
+id_fav serial NOT NULL PRIMARY KEY,
+id_user int,
+FOREIGN KEY(id_user) REFERENCES usuarios(id_user),
+titulo varchar(300) NOT NULL,
+descripcion text,
+salario varchar(10),
+url varchar(255)
+);
+
+SELECT * FROM favoritos;
