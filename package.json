@@ -4,7 +4,9 @@
   "description": "Base MERN project template",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+
   },
   "repository": {
     "type": "git",
@@ -15,5 +17,14 @@
   "bugs": {
     "url": "https://github.com/Rurucode/proyecto_freelance_RJF/issues"
   },
-  "homepage": "https://github.com/Rurucode/proyecto_freelance_RJF#readme"
+  "homepage": "https://github.com/Rurucode/proyecto_freelance_RJF#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongoose": "^6.0.13",
+    "node-fetch": "^2.6.5",
+    "nodemon": "^2.0.15",
+    "pug": "^3.0.2",
+    "puppeteer": "^11.0.0"
+  }
 }
