@@ -1,7 +1,7 @@
 
-INSERT INTO favoritos(nombre,email,contraseña,administrador)
+INSERT INTO usuarios(nombre,email,contraseña,administrador)
 VALUES 
-('fernando', 'fernando@gmail.com', 'admin', false);
+('manowar', 'manowar@gmail.com', 'metal', false);
 
 SELECT * FROM usuarios;
 

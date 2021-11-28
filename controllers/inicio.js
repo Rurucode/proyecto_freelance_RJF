@@ -1,6 +1,5 @@
 // --------------------- Renderizado de vistas básicas de CLIENTE -------------------
 
-
 //Pinta el home
 const inicio = (req,res) => {
     res.render('home');
