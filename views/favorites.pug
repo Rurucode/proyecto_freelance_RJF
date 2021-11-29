@@ -7,6 +7,7 @@ head
    link(rel='stylesheet' href='../styles/favorites.css')
    link(rel='stylesheet' href='../styles/normalize.css')
    link(rel='shortcut icon' href='../assets/images/favicon.png' type='image/x-icon')
+   script(src='https://kit.fontawesome.com/f408539d77.js' crossorigin='anonymous')
 body#body
    div#gif
       img#loadingId(src='../assets/images/gifCodeJobs.gif' alt='imgGif')
@@ -20,9 +21,23 @@ body#body
             li
                a(href='./profile') Tu cuenta
             li
-               a(href='./favorites') Favoritos
+               a(href='./favorites')#favoritesColor Favoritos
             li
                a(href='./logout') Salir
       label(for='toggle') &#x2630;
       input(type="checkbox")#toggle
-       
+   footer#footer.footerMenu
+      nav#footerMenu.menuInferior
+         ul#menuMovil.menuResponsive
+            li
+               a(href='./')
+                  <i class="fas fa-home" id="iconHome"></i>
+            li
+               a(href='./profile')
+                  <i class="fas fa-user" id="iconUser"></i>
+            li
+               a(href='./favorites')
+                  <i class="fas fa-heart" id="iconFavorites"></i>
+            li
+               a(href='./logout')
+                  <i class="fas fa-sign-out-alt" id="iconLogOut"></i>
