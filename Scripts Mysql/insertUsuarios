@@ -1,0 +1,15 @@
+
+INSERT INTO usuarios(nombre,email,contraseña,administrador)
+VALUES 
+('manowar', 'manowar@gmail.com', 'metal', false);
+
+SELECT * FROM usuarios;
+
+
+INSERT INTO favoritos(id_user, titulo, descripcion, salario, url)
+VALUES 
+((SELECT id_user FROM usuarios WHERE email='fernando@gmail.com'), 'TA THE BRIDGE', 'Enseñanza de programacion', '3356€', 'http:www.infojobs/4444.com');
+
+SELECT * FROM favoritos;
+
+DELETE FROM favoritos WHERE id_fav = 4
