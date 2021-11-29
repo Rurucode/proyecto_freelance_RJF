@@ -1,0 +1,68 @@
+doctype html
+head
+   meta(charset='UTF-8')
+   meta(http-equiv='X-UA-Compatible' content='IE=edge')
+   meta(name='viewport' content='width=device-width, initial-scale=1.0')
+   title COD3 (JOBS)
+   link(rel='stylesheet' href='../styles/home.css')
+   link(rel='stylesheet' href='../styles/normalize.css')
+   link(rel='shortcut icon' href='../assets/images/favicon.png' type='image/x-icon')
+   script(src='https://kit.fontawesome.com/f408539d77.js' crossorigin='anonymous')
+body#body
+   div#gif
+      img#loadingId(src='../assets/images/gifCodeJobs.gif' alt='imgGif')
+   header#header
+      img#logotipo.logotipoSuperior(src='../assets/images/logotipo_final_black.png' alt='logotipoHome')
+      nav#headerMenu.menuPrincipal
+         ul#pcMenu.menuPc
+            li
+               a(href='./') Inicio
+            li
+               a(href='./register') Registrate
+            li
+               a(href='./login') Inicia Sesión
+    
+      label(for='toggle') &#x2630;
+      input(type="checkbox")#toggle
+
+   form(action="/" method="POST")
+      input(type='text', name='name', placeholder='Ej: Javascript')  
+      input(type='submit', value='Buscar') 
+
+   nav#menuProfesiones.menuProfesiones
+   section#sectionContenidoHome
+      article#contenido1.publicacion1
+         h2.trabajo
+         h3.empresa 
+         h3.salario
+         p.descripcion
+      article#contenido2.publicacion2
+         h2.trabajo
+         h3.empresa 
+         h3.salario
+         p.descripcion
+      article#contenido3.publicacion3
+         h2.trabajo
+         h3.empresa 
+         h3.salario
+         p.descripcion
+      article#contenido4.publicacion4
+         h2.trabajo
+         h3.empresa 
+         h3.salario
+         p.descripcion
+   footer#footer.footerMenu
+      nav#footerMenu.menuInferior
+         ul#menuMovil.menuResponsive
+            li
+               <i class="fas fa-home" id="iconHome"></i>
+               a(href='./')
+            li
+               <i class="fas fa-user" id="iconUser"></i>
+               a(href='./profile')
+            li
+               <i class="fas fa-heart" id="iconFavorites"></i>
+               a(href='./favorites')
+            li
+               <i class="fas fa-sign-out-alt" id="iconLogOut"></i>
+               a(href='./logout')
