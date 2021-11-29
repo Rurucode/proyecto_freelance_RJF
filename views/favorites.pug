@@ -1,16 +1,28 @@
 doctype html
-html
-   head
-      title HOME
-   body
-     nav 
-      ul 
-       a(href="/")
-        li   Inicio 
-       a(href="favorites")
-        li  Favoritos
-       a(href="profile") 
-        li  Perfil 
-       a(href="/")
-        li Cerrar sesión
+head
+   meta(charset='UTF-8')
+   meta(http-equiv='X-UA-Compatible' content='IE=edge')
+   meta(name='viewport' content='width=device-width, initial-scale=1.0')
+   title COD3 (JOBS)
+   link(rel='stylesheet' href='../styles/favorites.css')
+   link(rel='stylesheet' href='../styles/normalize.css')
+   link(rel='shortcut icon' href='../assets/images/favicon.png' type='image/x-icon')
+body#body
+   div#gif
+      img#loadingId(src='../assets/images/gifCodeJobs.gif' alt='imgGif')
+   header#header
+      a(href='./')
+         img#logotipo.logotipoSuperior(src='../assets/images/logotipo_final_black.png' alt='logotipoHome')
+      nav#headerMenu.menuPrincipal
+         ul#pcMenu.menuPc
+            li
+               a(href='./') Inicio
+            li
+               a(href='./profile') Tu cuenta
+            li
+               a(href='./favorites') Favoritos
+            li
+               a(href='./logout') Salir
+      label(for='toggle') &#x2630;
+      input(type="checkbox")#toggle
        
