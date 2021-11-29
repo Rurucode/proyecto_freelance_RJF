@@ -25,6 +25,11 @@ body#body
                a(href='./logout') Salir
       label(for='toggle') &#x2630;
       input(type="checkbox")#toggle
+
+  form(action="/" method="POST")
+      input(type='text', name='name', placeholder='Ej: Javascript')  
+      input(type='submit', value='Buscar') 
+      
    nav#menuProfesiones.menuProfesiones
    section#sectionContenidoHome
       article#contenido1.publicacion1

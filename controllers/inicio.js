@@ -2,7 +2,7 @@
 
 //Pinta el home
 const inicio = (req,res) => {
-    res.render('home');
+    res.render('home_guess');
 }
 
 //Pinta el formulario de loggeo
