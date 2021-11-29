@@ -1,0 +1,101 @@
+@font-face {
+    font-family: 'outfit';
+    src: url('../assets/fonts/Outfit-VariableFont_wght.ttf');
+}
+
+/****************** BODY ******************/
+
+.formBody{
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    padding: 0;
+    background-color: #1B1C1E;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/****************** LOGOTIPO ******************/
+
+.logotipoForm{
+    margin: 16px;
+}
+
+/****************** SECTION ******************/
+
+.sectionLinks{
+    flex-direction: column;
+    justify-content: center;
+}
+
+#enlaceFacebook{
+    background-color: #3B5998;
+    color: #F7F8F9;
+}
+
+#enlaceGoogle{
+    background-color: #F7F8F9;
+    color: #1B1C1E;
+}
+
+.enlaces{
+    margin: 16px;
+    font-family: 'outfit';
+    padding: 16px 72px;
+    border-radius: 50px;
+    text-decoration: none;
+    display: flex;
+}
+
+.sendForm{
+    border: 0;
+    cursor: pointer;
+    padding: 16px 72px;
+    border-radius: 50px;
+    background-color: #F74371;
+    color: #F7F8F9;
+}
+
+.sectionP{
+    color: #F7F8F9;
+    font-family: 'outfit';
+    margin: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/****************** FORM ******************/
+
+.bodyForm{
+    color: #F7F8F9;
+    font-family: 'outfit';
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+form input{
+    margin: 16px;
+    padding: 16px 72px;
+}
+
+/****************** FOOTER ******************/
+
+.footerLink{
+    margin: 16px;
+}
+
+.link{
+    text-decoration: none;
+    color: #F7F8F9;
+    font-family: 'outfit';
+    font-weight: bold;
+    font-size: 3vh;
+    justify-content: center;
+}
