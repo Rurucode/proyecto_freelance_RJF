@@ -59,12 +59,21 @@ ul {
     list-style: none;
     display: inline;
 }
+
 /****************** SECTION MENU PROFESIONES ******************/
+
+
+
 /****************** SECTION PUBLICACIONES TRABAJO ******************/
+
+
+
 /****************** FOOTER ******************/
+
 nav.menuInferior{
     display: none;
 }
+
 @media screen and (max-width: 1330px) {
     #header{
         display: flex;

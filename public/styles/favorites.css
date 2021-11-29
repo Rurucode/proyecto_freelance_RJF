@@ -56,10 +56,21 @@
     list-style: none;
     display: inline;
 }
+<<<<<<< HEAD
 /****************** FOOTER ******************/
 nav.menuInferior{
     display: none;
 }
+=======
+
+
+/****************** FOOTER ******************/
+
+nav.menuInferior{
+    display: none;
+}
+
+>>>>>>> 7fe55a78d8b9685d9e856f45963401059e87200b
 @media screen and (max-width: 1330px) {
     #header{
         display: flex;
@@ -73,6 +84,10 @@ nav.menuInferior{
         display: none; 
     }
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7fe55a78d8b9685d9e856f45963401059e87200b
 .footerMenu{
     width: 100%;
     position: fixed;
