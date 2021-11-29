@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+// Esquema de como seria el contenido de favoritos
 const favoriteSchema = {
     title: { 
         type: String, 
