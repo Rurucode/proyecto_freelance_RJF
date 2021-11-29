@@ -2,9 +2,7 @@
     font-family: 'outfit';
     src: url('../assets/fonts/Outfit-VariableFont_wght.ttf');
 }
-
 /****************** BODY ******************/
-
 #body{
     width: 100%;
     height: 100%;
@@ -13,9 +11,7 @@
     padding: 0;
     background-color: #F7F8F9;
 }
-
 /****************** LOADING GIF ******************/
-
 #gif{
     background-color: #1B1C1E;
     min-height: 100vh;
@@ -24,13 +20,10 @@
     justify-content: center;
     align-items: center;
 }
-
 #loadingId{
     max-width: 50vw;
 }
-
 /****************** HEADER ******************/
-
 #header{
     margin: 50px 80px;
     display: flex;
@@ -38,135 +31,97 @@
     align-items: center;
     justify-content: space-between
 }
-
 .logotipoSuperior{
     width: 450px;
 }
-
 .menuPrincipal{
     font-family: 'outfit';
     font-size: 30px;
     justify-content: right;
 }
-
 .menuPrincipal a{
     clear: right;
     margin: 3vh;
     text-decoration: none;
     color: #1B1C1E;
 }
-
 #favoritesColor{
     font-weight: bold;
-}
-
-.menuPrincipal a:hover{
     color: #29C4F8;
+}
+.menuPrincipal a:hover{
     font-weight: bold;
 }
-
 .menuPrincipal ul li{
     list-style: none;
     display: inline;
 }
-
-label{
-    margin: 0 40px 0 0;
-    font-size: 32px;
-    line-height: 70px;
-    display: none;
-    width: 26px;
-    float: right;
-}
-
-#toggle{
-    display: none;
-}
-
-@media only screen and (max-width: 700px) {
-    label {
-        display: block;
-        cursor: pointer;
-    }
-    .menuPrincipal {
-        text-align: center;
-        width: 100%;
-        display: none;
-    }
-    .menuPrincipal a {
-        display: block;
-        border-bottom: 1px solid #1B1C1E;
-        margin: 0; 
-    }
-    #toggle:checked + .menuPrincipal{
-        display: block;
-    }
-}
-
 /****************** FOOTER ******************/
-
+nav.menuInferior{
+    display: none;
+}
+@media screen and (max-width: 1330px) {
+    #header{
+        display: flex;
+        justify-content: center;
+    }
+    nav.menuInferior{
+      display: flex;
+      justify-content: center;
+    }
+    nav.menuPrincipal{
+        display: none; 
+    }
+}
 .footerMenu{
     width: 100%;
     position: fixed;
     bottom: 0;
     background-color: #1B1C1E;
 }
-
 .menuInferior{
     list-style: none;
     font-size: 30px;
     font-family: 'outfit';
 }
-
 ul {
     display: flex;
     justify-content: center;
+    padding-inline-start: 0px;
 }
-
 .menuInferior ul li{
     display: inline;
 }
-
 .menuResponsive{
     justify-content: center;
 }
-
 .menuResponsive li a{
     text-decoration: none;
-    padding: 30px;
+    padding: 24px 40px;
     color: #F7F8F9;
 }
-
 /****************** FOOTER ICONS ******************/
-
 #iconHome{
     color: #F7F8F9;
 }
-
 #iconHome:hover{
     color: #29C4F8;
 }
-
 #iconUser{
     color: #F7F8F9;
 }
-
 #iconUser:hover{
     color: #29C4F8;
 }
-
 #iconFavorites{
     color: #29C4F8;
 }
-
 #iconFavorites:hover{
     color: #29C4F8;
 }
-
 #iconLogOut{
     color: #F7F8F9;
 }
-
 #iconLogOut:hover{
     color: #29C4F8;
 }
