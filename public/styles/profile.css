@@ -68,6 +68,7 @@
 ul {
     display: flex;
     justify-content: center;
+    padding-inline-start: 0px;
 }
 
 .menuPrincipal ul li{
@@ -75,40 +76,25 @@ ul {
     display: inline;
 }
 
-label{
-    margin: 0 40px 0 0;
-    font-size: 32px;
-    line-height: 70px;
-    display: none;
-    width: 26px;
-    float: right;
-}
-
-#toggle{
-    display: none;
-}
-
-@media only screen and (max-width: 700px) {
-    label {
-        display: block;
-        cursor: pointer;
-    }
-    .menuPrincipal {
-        text-align: center;
-        width: 100%;
-        display: none;
-    }
-    .menuPrincipal a {
-        display: block;
-        border-bottom: 1px solid #1B1C1E;
-        margin: 0; 
-    }
-    #toggle:checked + .menuPrincipal{
-        display: block;
-    }
-}
-
 /****************** FOOTER ******************/
+
+nav.menuInferior{
+    display: none;
+}
+
+@media screen and (max-width: 1330px) {
+    #header{
+        display: flex;
+        justify-content: center;
+    }
+    nav.menuInferior{
+      display: flex;
+      justify-content: center;
+    }
+    nav.menuPrincipal{
+        display: none; 
+    }
+}
 
 .footerMenu{
     width: 100%;
@@ -123,6 +109,11 @@ label{
     font-family: 'outfit';
 }
 
+ul {
+    display: flex;
+    justify-content: center;
+}
+
 .menuInferior ul li{
     display: inline;
 }
@@ -133,7 +124,7 @@ label{
 
 .menuResponsive li a{
     text-decoration: none;
-    padding: 30px;
+    padding: 24px 40px;
     color: #F7F8F9;
 }
 

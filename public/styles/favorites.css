@@ -58,10 +58,10 @@
 
 #favoritesColor{
     font-weight: bold;
+    color: #29C4F8;
 }
 
 .menuPrincipal a:hover{
-    color: #29C4F8;
     font-weight: bold;
 }
 
@@ -70,40 +70,26 @@
     display: inline;
 }
 
-label{
-    margin: 0 40px 0 0;
-    font-size: 32px;
-    line-height: 70px;
-    display: none;
-    width: 26px;
-    float: right;
-}
-
-#toggle{
-    display: none;
-}
-
-@media only screen and (max-width: 700px) {
-    label {
-        display: block;
-        cursor: pointer;
-    }
-    .menuPrincipal {
-        text-align: center;
-        width: 100%;
-        display: none;
-    }
-    .menuPrincipal a {
-        display: block;
-        border-bottom: 1px solid #1B1C1E;
-        margin: 0; 
-    }
-    #toggle:checked + .menuPrincipal{
-        display: block;
-    }
-}
 
 /****************** FOOTER ******************/
+
+nav.menuInferior{
+    display: none;
+}
+
+@media screen and (max-width: 1330px) {
+    #header{
+        display: flex;
+        justify-content: center;
+    }
+    nav.menuInferior{
+      display: flex;
+      justify-content: center;
+    }
+    nav.menuPrincipal{
+        display: none; 
+    }
+}
 
 .footerMenu{
     width: 100%;
@@ -121,6 +107,7 @@ label{
 ul {
     display: flex;
     justify-content: center;
+    padding-inline-start: 0px;
 }
 
 .menuInferior ul li{
@@ -133,7 +120,7 @@ ul {
 
 .menuResponsive li a{
     text-decoration: none;
-    padding: 30px;
+    padding: 24px 40px;
     color: #F7F8F9;
 }
 
