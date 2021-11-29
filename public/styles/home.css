@@ -2,9 +2,7 @@
     font-family: 'outfit';
     src: url('../assets/fonts/Outfit-VariableFont_wght.ttf');
 }
-
 /****************** BODY ******************/
-
 #body{
     width: 100%;
     height: 100%;
@@ -12,9 +10,7 @@
     padding: 0;
     background-color: #F7F8F9;
 }
-
 /****************** LOADING GIF ******************/
-
 #gif{
     background-color: #1B1C1E;
     min-height: 100vh;
@@ -23,13 +19,10 @@
     justify-content: center;
     align-items: center;
 }
-
 #loadingId{
     max-width: 50vw;
 }
-
 /****************** HEADER ******************/
-
 #header{
     margin: 50px 80px;
     display: flex;
@@ -37,38 +30,31 @@
     align-items: center;
     justify-content: space-between
 }
-
 .logotipoSuperior{
     width: 450px;
 }
-
 .menuPrincipal{
     font-family: 'outfit';
     font-size: 30px;
     justify-content: right;
 }
-
 .menuPrincipal a{
     clear: right;
     margin: 3vh;
     text-decoration: none;
     color: #1B1C1E;
 }
-
 #homeColor{
     color: #29C4F8;
     font-weight: bold;
 }
-
 .menuPrincipal a:hover{
     font-weight: bold;
 }
-
 ul {
     display: flex;
     justify-content: center;
 }
-
 .menuPrincipal ul li{
     list-style: none;
     display: inline;
@@ -101,7 +87,6 @@ nav.menuInferior{
         display: none; 
     }
 }
-
 .footerMenu{
     width: 100%;
     height: auto;
@@ -109,64 +94,50 @@ nav.menuInferior{
     bottom: 0;
     background-color: #1B1C1E;
 }
-
 .menuInferior{
     list-style: none;
     font-size: 30px;
     font-family: 'outfit';
 }
-
 ul {
     display: flex;
     justify-content: center;
     padding-inline-start: 0px;
 }
-
 .menuInferior ul li{
     display: inline;
 }
-
 .menuResponsive ul{
     display: flex;
     justify-content: center;
 }
-
 .menuResponsive li a{
     text-decoration: none;
     padding: 24px 40px;
     color: #F7F8F9;
 }
-
 /****************** FOOTER ICONS ******************/
-
 #iconHome{
     color: #29C4F8;
 }
-
 #iconHome:hover{
     color: #29C4F8;
 }
-
 #iconUser{
     color: #F7F8F9;
 }
-
 #iconUser:hover{
     color: #29C4F8;
 }
-
 #iconFavorites{
     color: #F7F8F9;
 }
-
 #iconFavorites:hover{
     color: #29C4F8;
 }
-
 #iconLogOut{
     color: #F7F8F9;
 }
-
 #iconLogOut:hover{
     color: #29C4F8;
 }
