@@ -56,6 +56,20 @@
     color: #1B1C1E;
 }
 
+#profileColor{
+    color: #29C4F8;
+    font-weight: bold;
+}
+
+.menuPrincipal a:hover{
+    font-weight: bold;
+}
+
+ul {
+    display: flex;
+    justify-content: center;
+}
+
 .menuPrincipal ul li{
     list-style: none;
     display: inline;
@@ -92,4 +106,67 @@ label{
     #toggle:checked + .menuPrincipal{
         display: block;
     }
+}
+
+/****************** FOOTER ******************/
+
+.footerMenu{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    background-color: #1B1C1E;
+}
+
+.menuInferior{
+    list-style: none;
+    font-size: 30px;
+    font-family: 'outfit';
+}
+
+.menuInferior ul li{
+    display: inline;
+}
+
+.menuResponsive{
+    justify-content: center;
+}
+
+.menuResponsive li a{
+    text-decoration: none;
+    padding: 30px;
+    color: #F7F8F9;
+}
+
+/****************** FOOTER ICONS ******************/
+
+#iconHome{
+    color: #F7F8F9;
+}
+
+#iconHome:hover{
+    color: #29C4F8;
+}
+
+#iconUser{
+    color: #29C4F8;
+}
+
+#iconUser:hover{
+    color: #29C4F8;
+}
+
+#iconFavorites{
+    color: #F7F8F9;
+}
+
+#iconFavorites:hover{
+    color: #29C4F8;
+}
+
+#iconLogOut{
+    color: #F7F8F9;
+}
+
+#iconLogOut:hover{
+    color: #29C4F8;
 }
