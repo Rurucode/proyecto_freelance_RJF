@@ -12,19 +12,17 @@ body#body
    div#gif
       img#loadingId(src='../assets/images/gifCodeJobs.gif' alt='imgGif')
    header#header
-      img#logotipo.logotipoSuperior(src='../assets/images/logotipo_final_black.png' alt='logotipoHome')
+      a(href='./')
+       img#logotipo.logotipoSuperior(src='../assets/images/logotipo_final_black.png' alt='logotipoHome')
       nav#headerMenu.menuPrincipal
          ul#pcMenu.menuPc
-            li
-               a(href='./')#homeColor Inicio
             li
                a(href='./profile') Tu cuenta
             li
                a(href='./favorites') Favoritos
             li
                a(href='./logout') Salir
-      label(for='toggle') &#x2630;
-      input(type="checkbox")#toggle
+      
 
   form(action="/" method="POST")
       input(type='text', name='name', placeholder='Ej: Javascript')  
@@ -36,18 +34,22 @@ body#body
          h2.trabajo 
          h3.salario
          p.descripcion
+         input:submit.guardarEnFavoritos
       article#contenido2.publicacion2
          h2.trabajo 
          h3.salario
          p.descripcion
+         input:submit.guardarEnFavoritos
       article#contenido3.publicacion3
          h2.trabajo 
          h3.salario
          p.descripcion
+         input:submit.guardarEnFavoritos
       article#contenido4.publicacion4
          h2.trabajo 
          h3.salario
          p.descripcion
+         input:submit.guardarEnFavoritos
    footer#footer.footerMenu
       nav#footerMenu.menuInferior
          ul#menuMovil.menuResponsive
