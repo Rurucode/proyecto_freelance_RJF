@@ -6,7 +6,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js"
-
   },
   "repository": {
     "type": "git",
@@ -19,12 +18,15 @@
   },
   "homepage": "https://github.com/Rurucode/proyecto_freelance_RJF#readme",
   "dependencies": {
-    "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "mongoose": "^6.0.13",
     "node-fetch": "^2.6.5",
     "nodemon": "^2.0.15",
     "pug": "^3.0.2",
     "puppeteer": "^11.0.0"
+  },
+  "devDependencies": {
+    "dotenv": "^10.0.0",
+    "pg": "^8.7.1"
   }
 }
