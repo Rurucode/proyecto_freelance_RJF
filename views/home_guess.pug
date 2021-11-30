@@ -22,31 +22,10 @@ body#body
                a(href='./login') Inicia Sesión
    
    form(action="/" method="POST")
-      input(type='text', name='name', placeholder='Ej: Javascript')  
-      input(type='submit', value='Buscar') 
+      input(type='text', name='name', placeholder='Ej: Javascript', id="buscadorOferta")  
+      input(type='button', value='Buscar', id="botonBusquedaOferta") 
 
-   nav#menuProfesiones.menuProfesiones
-   section#sectionContenidoHome
-      article#contenido1.publicacion1
-         h2.trabajo 
-         h3.salario
-         p.descripcion
-         input:submit.guardarEnFavoritos
-      article#contenido2.publicacion2
-         h2.trabajo 
-         h3.salario
-         p.descripcion
-         input:submit.guardarEnFavoritos
-      article#contenido3.publicacion3
-         h2.trabajo 
-         h3.salario
-         p.descripcion
-         input:submit.guardarEnFavoritos
-      article#contenido4.publicacion4
-         h2.trabajo 
-         h3.salario
-         p.descripcion
-         input:submit.guardarEnFavoritos
+   
    footer#footer.footerMenu
       nav#footerMenu.menuInferior
          ul#menuMovil.menuResponsive
