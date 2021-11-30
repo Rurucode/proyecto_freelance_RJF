@@ -60,10 +60,18 @@ ul {
     display: inline;
 }
 
+@media screen and (max-width: 769px) {
+    #logotipo{
+        display: flex;
+        justify-content: center;
+    }
+}
+
 /****************** BUSCADOR TRABAJO ******************/
 
-.searcherForm{
-    margin-top: 64px;
+.searcherDiv{
+    margin: 0 auto;
+    margin-top: 48px;
     margin-left: 80px;
     margin-right: 80px;
     display: flex;
@@ -75,7 +83,6 @@ ul {
 .whatSearch{
     background-color: #faf6c0;
     width: 700px;
-    height: 50px;
     border-style: none;
     border: 1px solid #F7E811;
     border-radius: 30px;
@@ -93,18 +100,26 @@ ul {
     color: #F7F8F9;
     cursor: pointer;
     min-width: 50px;
+    margin-left: -50px;
 }
 
 /****************** SECTION MENU PROFESIONES ******************/
 
+.menuIntermedio{
+    margin-top: 48px;
+}
+
 .menuIntermedio ul{
     display: flex;
+    flex-wrap: wrap;
 }
 
 .layer{
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    margin: 48px 64px;
 }
 
 .layer img{
@@ -114,12 +129,22 @@ ul {
     transition: .6s ease-in-out;
 }
 
+.layer p{
+    color:#F7F8F9;
+    font-family: 'outfit';
+}
+
+.layer p:hover{
+    color:#F7F8F9;
+    font-family: 'outfit';
+    font-weight: bolder;
+}
+
 .menuIntermedio ul li{
-    margin-right: 32px;
+    list-style: none;
 }
 
 .circuloRosa{
-    margin-top: 32px;
     position: absolute;
     z-index: -1;
 }
@@ -142,8 +167,8 @@ nav.menuInferior{
         min-width: 320px;
     }
     nav.menuInferior{
-      display: flex;
-      justify-content: center;
+        display: flex;
+        justify-content: center;
     }
     nav.menuPrincipal{
         display: none; 
