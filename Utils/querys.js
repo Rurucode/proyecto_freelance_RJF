@@ -6,7 +6,7 @@ const selectUsuario = `SELECT `
 
 const insertUsuarios = `INSERT INTO usuarios(nombre,email,contraseña,administrador)
 VALUES 
-('manowar', 'manowar@gmail.com', 'metal', false);`
+($1, $2, $3, false);`
 
 const insertFavoritos = `INSERT INTO favoritos(id_user, titulo, descripcion, salario, url)
 VALUES 

@@ -1,13 +1,7 @@
-const querys = require('../utils/querys')
 // Conecta con la base de datos de Postgre
+const querys = require('../utils/querys')
+const pool = require('../utils/postgreConnection')
 
-const { Pool } = require('pg');
-const pool = new Pool({
-    user: 'postgres',
-    host: 'localhost',
-    database: 'CodeJobs',
-    password: 'root'
-})
 
 // Obtener todos los usuarios Registrados. Exclusivo del admin.
 const getAllUsuarios = async () => {
@@ -26,11 +20,12 @@ const getAllUsuarios = async () => {
 }
 
 
-const insertUsuario = async () =>{
+const insertUsuario = async (entry) =>{
     let client, result;
+    const {nombre, email, contraseña} = entry;
     try{
         client = await pool.connect(); // Espera a abrir conexion
-        const data = await client.query(querys.insertUsuarios)
+        const data = await client.query(querys.insertUsuarios, [nombre, email, contraseña])
         result = data.rows
     }catch(err){
         console.log(err);
@@ -41,20 +36,11 @@ const insertUsuario = async () =>{
     return result
 }
 
-const insertUsuario = async () =>{
-    let client, result;
-    try{
-        client = await pool.connect(); // Espera a abrir conexion
-        const data = await client.query(querys.insertUsuarios)
-        result = data.rows
-    }catch(err){
-        console.log(err);
-        throw err;
-    }finally{
-        client.release();    
-    }
-    return result
-}
 
-getAllUsuarios()
+// getAllUsuarios()
+// .then(data=>console.log(data))
+
+let newEntry = {nombre:'jager',email:'jagger@gmail.com',contraseña:'1234'};
+
+insertUsuario(newEntry)
 .then(data=>console.log(data))
