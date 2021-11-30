@@ -97,7 +97,32 @@ ul {
 
 /****************** SECTION MENU PROFESIONES ******************/
 
+.menuIntermedio ul{
+    display: flex;
+}
 
+.layer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.layer img{
+    display: flex;
+    height: 100px;
+    width: 100px;
+    transition: .6s ease-in-out;
+}
+
+.menuIntermedio ul li{
+    margin-right: 32px;
+}
+
+.circuloRosa{
+    margin-top: 32px;
+    position: absolute;
+    z-index: -1;
+}
 
 /****************** SECTION PUBLICACIONES TRABAJO ******************/
 
@@ -112,7 +137,9 @@ nav.menuInferior{
 @media screen and (max-width: 1330px) {
     #header{
         display: flex;
+        flex-wrap: wrap;
         justify-content: center;
+        min-width: 320px;
     }
     nav.menuInferior{
       display: flex;
