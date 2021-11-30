@@ -1,6 +1,6 @@
+// Conecta con la base de datos de Postgre
 const querys = require('../utils/querys')
 const pool = require('../utils/postgreConnection')
-// Conecta con la base de datos de Postgre
 
 
 // Obtener todos los usuarios Registrados. Exclusivo del admin.
@@ -22,10 +22,10 @@ const getAllUsuarios = async () => {
 
 const insertUsuario = async (entry) =>{
     let client, result;
-    const {nombre, email, contraseña,administrador} = entry;
+    const {nombre, email, contraseña} = entry;
     try{
         client = await pool.connect(); // Espera a abrir conexion
-        const data = await client.query(querys.insertUsuarios, [nombre, email, contraseña,administrador])
+        const data = await client.query(querys.insertUsuarios, [nombre, email, contraseña])
         result = data.rows
     }catch(err){
         console.log(err);
@@ -40,5 +40,7 @@ const insertUsuario = async (entry) =>{
 // getAllUsuarios()
 // .then(data=>console.log(data))
 
-insertUsuario()
+let newEntry = {nombre:'jager',email:'jagger@gmail.com',contraseña:'1234'};
+
+insertUsuario(newEntry)
 .then(data=>console.log(data))
