@@ -8,9 +8,11 @@ head
    link(rel='stylesheet' href='../styles/normalize.css')
    link(rel='shortcut icon' href='../assets/images/favicon.png' type='image/x-icon')
    script(src='https://kit.fontawesome.com/f408539d77.js' crossorigin='anonymous')
+
 body#body
    div#gif
       img#loadingId(src='../assets/images/gifCodeJobs.gif' alt='imgGif')
+
    header#header
       a(href='./')
          img#logotipo.logotipoSuperior(src='../assets/images/logotipo_final_black.png' alt='logotipoHome')
@@ -23,10 +25,11 @@ body#body
             li
                a(href='./logout') Salir
 
-  form(action="/" method="POST")
-      input(type='text', name='name', placeholder='Ej: Javascript', id="buscadorOferta")  
-      input(type='submit', value='Buscar', id="botonBusquedaOferta") 
-      
+    form.searcherForm(action="/" method="POST")
+      input.whatSearch(type='text', name='name', placeholder='Busca ofertas de...', id="buscadorOferta")  
+      button(type="button", class="fas fa-search")
+
+   
    footer#footer.footerMenu
       nav#footerMenu.menuInferior
          ul#menuMovil.menuResponsive

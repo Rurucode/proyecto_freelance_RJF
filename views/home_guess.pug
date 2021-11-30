@@ -8,36 +8,72 @@ head
    link(rel='stylesheet' href='../styles/normalize.css')
    link(rel='shortcut icon' href='../assets/images/favicon.png' type='image/x-icon')
    script(src='https://kit.fontawesome.com/f408539d77.js' crossorigin='anonymous')
+
 body#body
    div#gif
       img#loadingId(src='../assets/images/gifCodeJobs.gif' alt='imgGif')
+
    header#header
       a(href='./')
        img#logotipo.logotipoSuperior(src='../assets/images/logotipo_final_black.png' alt='logotipoHome')
       nav#headerMenu.menuPrincipal
          ul#pcMenu.menuPc
             li
-               a(href='./register') Registrate
+               a(href='./register') Registrarse
             li
-               a(href='./login') Inicia Sesión
-   
-   form(action="/" method="POST")
-      input(type='text', name='name', placeholder='Ej: Javascript', id="buscadorOferta")  
-      input(type='button', value='Buscar', id="botonBusquedaOferta") 
+               a(href='./login') Iniciar sesión
 
-   
+   form.searcherForm(action="/" method="POST")
+      input.whatSearch(type='text', name='name', placeholder='Busca ofertas de...',  id="buscadorOferta")  
+      button.iconLupa(type="button", class="fas fa-search")
+
+   div#menuSecundario.menuIntermedio
+      ul#menuProfesiones.profesionesMenu
+         li
+            div.layer
+               p Full Stack
+               img.circuloRosa(src='../assets/images/circulo_degradado.png' alt="circuloRosa")
+         li
+            div.layer
+               p Ciber Security
+               img.circuloRosa(src='../assets/images/circulo_degradado.png' alt="circuloRosa")
+         li
+            div.layer
+               p Marketing OPS
+               img.circuloRosa(src='../assets/images/circulo_degradado.png' alt="circuloRosa")
+         li
+            div.layer
+               p UX/UI Designer
+               img.circuloRosa(src='../assets/images/circulo_degradado.png' alt="circuloRosa")
+         li
+            div.layer
+               p Data Analyst
+               img.circuloRosa(src='../assets/images/circulo_degradado.png' alt="circuloRosa")
+         li
+            div.layer
+               p Graphic Designer
+               img.circuloRosa(src='../assets/images/circulo_degradado.png' alt="circuloRosa")
+         li
+            div.layer
+               p FrontEnd Developer
+               img.circuloRosa(src='../assets/images/circulo_degradado.png' alt="circuloRosa")
+         li
+            div.layer
+               p BackEnd Developer
+               img.circuloRosa(src='../assets/images/circulo_degradado.png' alt="circuloRosa")
+
    footer#footer.footerMenu
       nav#footerMenu.menuInferior
          ul#menuMovil.menuResponsive
             li
-               <i class="fas fa-home" id="iconHome"></i>
                a(href='./')
+                  <i class="fas fa-home" id="iconHome"></i>
             li
-               <i class="fas fa-user" id="iconUser"></i>
                a(href='./profile')
+                  <i class="fas fa-user" id="iconUser"></i>
             li
-               <i class="fas fa-heart" id="iconFavorites"></i>
                a(href='./favorites')
+                  <i class="fas fa-heart" id="iconFavorites"></i>
             li
-               <i class="fas fa-sign-out-alt" id="iconLogOut"></i>
                a(href='./logout')
+                  <i class="fas fa-sign-out-alt" id="iconLogOut"></i>
