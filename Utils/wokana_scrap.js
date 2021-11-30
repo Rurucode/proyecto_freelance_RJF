@@ -1,52 +1,62 @@
 const puppeteer = require("puppeteer");
-//fetch a https://www.workana.com/jobs?category=it-programming&language=es&query=programacion
+//fetch a https://www.freelancer.es/jobs/?keyword=software
+//Se puede hacer una busqueda sustituyendo web+development por lo que quieras (a traves del input del form)
 
+//Funcion para scrap donde se le pasa por parametro la url de donde vas a buscar
+const scrapFreelancer = async(url) => {
+    try {
+        console.log('Opening browser');
+        //Creamos la constante browser donde le entra el chronium lanzado
+        const browser = await puppeteer.launch({headless: false});
 
-// Función que se encarga de realizar toda la operación de scrap para la recogida de datos (links e info por separado)
-const scrapWorkana = async(url) => {
-    //Abre el navegador
-    const browser = await puppeteer.launch({headless: false})
-    //Nueva pagina
-    const page = await browser.newPage();
-    //Va a la url (que le entrara por la funcion del model)
-    await page.goto(url);    
+        //Nueva pagina y con goto navegamos hacia ella
+        const page = await browser.newPage();
+        await page.goto(url);
+        console.log(`Navegating to ${url}`);
 
-    //Funcion que devuelve un array con todos los enlaces de la pagina de wokana
-    const enlaces = await page.evaluate(() => {
-        //Saca los enlaces
-        const elementos = document.querySelectorAll('.project-item div h2 a');
-        const links = [];
-        for (let element of elementos){
-            //Almacena 1 a 1 los href de la constante elementos
-            links.push(element.href);
-        }
-        return links;
-    });
+        //Esperamos a que en la pagina aparezca el selector que va entre parentesis y una vez que lo encuentre comienza el resto
+        await page.waitForSelector('.ProjectSearch-content');
 
-    //console.log(enlaces[0]);
+        //Creamos una funcion que lo primero que hace es evaluar el contenido de dicho selector y no le entra ningun parametro
+        const trabajos = await page.$$eval('.ProjectSearch-content', () => {
+            //Creamos un array para guardar la información de cada oferta de trabajo e inicializamos los parametros que iran dentro del array
+            const infoTrabajos = [];
+            let tituloTrabajo = "";
+            let descripcionTrabajo = "";
+            let salarioTrabajo = "";
+            let urlTrabajo = "";
+            
+            //Creamos un array donde le entran el numero de ofertas traidas por el selector .JobSearchCard-item y lo vamos recorriendo y añadiendolo a su respectivos parametros recogiendo de cada uno de ellos titulo,descripcion,salario y enlace
+            const arrayDeOfertas = document.querySelectorAll('.JobSearchCard-item');
+            arrayDeOfertas.forEach(element => {
+                tituloTrabajo = element.querySelector('.JobSearchCard-primary-heading-link').innerText
+                descripcionTrabajo = element.querySelector('.JobSearchCard-primary-description').innerText
+                salarioTrabajo = element.querySelector('div.JobSearchCard-primary-hidden > div ').innerText
+                urlTrabajo = element.querySelector('.JobSearchCard-primary-heading-link').href
 
-    //Creamos un array de ofertas que le entrara posteriormente le entrara varios objetos con la información de cada oferta
-    const ofertas = [];
-
-    //Recorremos los enlaces previamente captados
-    for (let enlace of enlaces){
-        //Entra en cada uno de ellos
-        await page.goto(enlace);
-        //Funcion que devuelve un ibjeto con los campos title,description y price
-        const info = await page.evaluate(() => {
-            const obj = {};
-            obj.title = document.querySelector('.h3.title').innerText;
-            obj.description = document.querySelector('.expander.js-expander-passed').innerText;
-            obj.price = document.querySelector('.budget.text-success.text-right').innerText;
-            // tmp.url = enlace;
-            return obj;
+                //Pusheamos cada parametro recogido a infoTrabajos
+                infoTrabajos.push({
+                    "titulo": tituloTrabajo,
+                    "descripcion": descripcionTrabajo,
+                    "salario": salarioTrabajo,
+                    "url": urlTrabajo
+                });
+            });
+            //Una vez finalizado el bucle devolvemos el array con toda la información
+            return infoTrabajos;
         });
-        ofertas.push(info);
+        //console.log(trabajos);
+
+        //Cerramos el browser
+        await browser.close();
+        //Devolvemos trabajos donde le llega la info recogida del return infoTrabajos
+        return trabajos;
+
+
+    } catch (err) {
+        console.log({"Error": err});
     }
-    // console.log(ofertas);
-    await browser.close();
 }
 
-
-
-exports.scrap = scrapWorkana;
+//Exportamos la función
+exports.scrapFreelancer = scrapFreelancer;
