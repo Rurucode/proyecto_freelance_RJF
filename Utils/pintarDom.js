@@ -20,15 +20,15 @@ const PINTAR = (oferta) => {
     // Creamos los elementos de nuestra oferta, imprimimos lo que obtengamos del scrap y le añadimos una clase
 
     const trabajoH2 = document.createElement("h2");
-    trabajoH2.innerHTML = oferta.title.slice(0,30);
+    trabajoH2.innerHTML = oferta.tituloTrabajo.slice(0,30);
     trabajoH2.setAttribute("class", "classTrabajoH2");
 
     const salarioH3 = document.createElement("h3");
-    salarioH3.innerHTML = oferta.price;
+    salarioH3.innerHTML = oferta.salarioTrabajo;
     salarioH3.setAttribute("class", "classSalarioH3");
 
     const descripcionP = document.createElement("p");
-    descripcionP.innerHTML = oferta.description;
+    descripcionP.innerHTML = oferta.descripcionTrabajo;
     descripcionP.setAttribute("class", "classDescripcionP");
 
     const enviarInput = document.createElement("input");
@@ -37,7 +37,7 @@ const PINTAR = (oferta) => {
     // Creamos una variable que genera una etiqueta a y le indicamos la url del scrap
 
     const enlaceOferta = document.createElement("a");
-    enlaceOferta.setAttribute("href", oferta.enlaces);
+    enlaceOferta.setAttribute("href", oferta.urlTrabajo);
 
     // Metemos en la etiqueta a en el div que contiene todos los elementos para que nos redirija a la oferta
 
