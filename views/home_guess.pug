@@ -24,8 +24,8 @@ body#body
                a(href='./login') Iniciar sesión
 
    form.searcherForm(action="/" method="POST")
-      input.whatSearch(type='text', name='name', placeholder='Busca ofertas de...')  
-      button.iconLupa(type="submit", class="fas fa-search")
+      input.whatSearch(type='text', name='name', placeholder='Busca ofertas de...',  id="buscadorOferta")  
+      button.iconLupa(type="button", class="fas fa-search")
 
    div#menuSecundario.menuIntermedio
       ul#menuProfesiones.profesionesMenu
@@ -61,28 +61,6 @@ body#body
             div.layer
                p BackEnd Developer
                img.circuloRosa(src='../assets/images/circulo_degradado.png' alt="circuloRosa")
-
-   section#sectionContenidoHome
-      article#contenido1.publicacion1
-         h2.trabajo 
-         h3.salario
-         p.descripcion
-         input:submit.guardarEnFavoritos
-      article#contenido2.publicacion2
-         h2.trabajo 
-         h3.salario
-         p.descripcion
-         input:submit.guardarEnFavoritos
-      article#contenido3.publicacion3
-         h2.trabajo 
-         h3.salario
-         p.descripcion
-         input:submit.guardarEnFavoritos
-      article#contenido4.publicacion4
-         h2.trabajo 
-         h3.salario
-         p.descripcion
-         input:submit.guardarEnFavoritos
 
    footer#footer.footerMenu
       nav#footerMenu.menuInferior

@@ -22,7 +22,7 @@ const scrapPeoplePerHour = async(url) => {
             //Creamos un array para guardar la información de cada oferta de trabajo e inicializamos los parametros que iran dentro del array
             const infoTrabajos = [];
             let tituloTrabajo = "";
-            //let descripcionTrabajo = "";
+            let descripcionTrabajo = "";
             let salarioTrabajo = "";
             let urlTrabajo = "";
             
@@ -37,7 +37,7 @@ const scrapPeoplePerHour = async(url) => {
                 ////Pusheamos cada parametro recogido a infoTrabajos
                 infoTrabajos.push({
                     "titulo": tituloTrabajo,
-                    //"descripcion": descripcionTrabajo,
+                    "descripcion": descripcionTrabajo,
                     "salario": salarioTrabajo,
                     "url": urlTrabajo
                 });
