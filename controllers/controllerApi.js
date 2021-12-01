@@ -41,10 +41,27 @@ const createUser = async (req, res) => {
     }
 }
 
+const login = async (req, res) => {
+    try {
+
+        const result = await functionQuerys.login(req.body.email, req.body.password);
+        if (result == 1) {
+            console.log("Es correcto estas dentro")
+        } else {
+            console.log("Error Incorrecto ");
+        }
+        res.status(200).redirect('/');
+    } catch (error) {
+        error = 'me cago en todo'
+        res.status(400).json({"error":error});
+    }
+}
+
 
 const controllerFunctions = {
     busquedaTrabajo,
-    createUser
+    createUser,
+    login
 }
 
 module.exports = controllerFunctions;

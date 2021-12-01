@@ -127,7 +127,23 @@ const deleteFavorito = async (id_fav) => {
     return result
 }
 
+const login = async (email, password) => {
+    let client, result;
+    try {
+        client = await pool.connect(); // Espera a abrir conexion
+        const data = await client.query(querys.login, [email, password])
+        result = data.rowCount
+    } catch (err) {
+        console.log(err);
+        throw err;
+    } finally {
+        client.release();
+    }
+    return result
+}
 
+// login('Marylo@gmail.com', '123456')
+// .then(data=>(console.log(data)))
 
 
 //Pruebas
@@ -168,7 +184,8 @@ const functionQuerys = {
     busquedaUserFavoritos,
     editUsuario,
     deleteUsuario,
-    deleteFavorito
+    deleteFavorito,
+    login
 }
 
 module.exports = functionQuerys;

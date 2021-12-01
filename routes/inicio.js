@@ -19,5 +19,6 @@ routes.get('/users', vistasBasicas.users)
 
 // ----------- Ruta obtener usuario --------------
 routes.post('/signup', controllerFunctions.createUser)
+routes.post('/login', controllerFunctions.login)
 
 module.exports = routes;
