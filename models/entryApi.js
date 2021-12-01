@@ -54,8 +54,9 @@ const insertUsuario = async (entry) => {
 //Pruebas
 // allUsuarios()
 // .then(data=>console.log(data))
-
+/*
 let newEntry = { nombre: "jager", email: "jagger@gmail.com", contraseña: "1234" };
 
 insertUsuario(newEntry)
 .then(data=>console.log(data))
+*/

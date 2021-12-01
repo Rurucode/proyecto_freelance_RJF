@@ -2,6 +2,8 @@
 
 const freelancer = require("../Utils/wokana_scrap");
 const peoplePerHourScrap = require("../Utils/peoplePerHour_scrap");
+const USER = require("../models/entryApi");
+const { users } = require("./inicio");
 
 // Creamos una función para obtener los datos del scrap
 const busquedaTrabajo = async (req, res) => {
@@ -23,4 +25,19 @@ const busquedaTrabajo = async (req, res) => {
 
 }
 
-exports.prueba = busquedaTrabajo;
+// Obtención de los datos del usuario, insertados en el formulario de registro(sign in)
+const createUser = async (req, res) => {
+    try {
+        const result = await USER.insertUsuario(req.body.userName, req.body.userEmail, req.body.userPassword);
+    } catch (error) {
+        res.status(400).json({"error":error});
+    }
+    return result;
+}
+
+const exportFunctions = {
+    busquedaTrabajo,
+    createUser
+}
+
+module.exports = exportFunctions;

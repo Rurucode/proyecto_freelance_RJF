@@ -6,14 +6,17 @@ const prueba = require('../controllers/controllerApi');
 
 routes.get('/', vistasBasicas.inicio);
 routes.get('/login', vistasBasicas.login);
-routes.get('/register', vistasBasicas.signin);
-routes.get('/profile', vistasBasicas.profile)
-routes.get('/favorites', vistasBasicas.favorites)
-routes.get('/prueba', prueba.prueba)
+routes.get('/signup', vistasBasicas.signup);
+routes.get('/profile', vistasBasicas.profile);
+routes.get('/favorites', vistasBasicas.favorites);
+//routes.get('/prueba', prueba.prueba);
 
 // ----------- Rutas para las vistas del ADMIN --------------
 
 routes.get('/users', vistasBasicas.users)
 routes.get('/dashboard', vistasBasicas.dashboard)
+
+// ----------- Ruta obtener usuario --------------
+routes.post('/user', prueba.createUser)
 
 module.exports = routes;
