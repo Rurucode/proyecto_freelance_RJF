@@ -8,30 +8,30 @@ const insertUsuario = `INSERT INTO usuarios(nombre,email,contraseña,administrad
 VALUES 
 ($1, $2, $3, false);`
 
-const insertFavoritos = `INSERT INTO favoritos(id_user, titulo, descripcion, salario, url)
+const insertFavorito = `INSERT INTO favoritos(id_user, titulo, descripcion, salario, url)
 VALUES 
 ((SELECT id_user FROM usuarios WHERE email=$1), $2, $3, $4, $5);`
 
 const busquedaUserFavoritos = `SELECT * FROM favoritos WHERE id_user=$1`
 
-const deleteFavoritos = `DELETE * FROM favoritos WHERE id_user=$1`
+const editUsuario = `UPDATE usuarios SET nombre=$1, email=$2,contraseña=$3 WHERE id_user=$4`
 
-const deleteUsuarios = `DELETE * FROM usuarios WHERE id_user=$1`
+const deleteUsuario = `DELETE FROM usuarios WHERE id_user=$1`
 
-const editUsuarios = `UPDATE usuarios SET nombre=$1, email=$2,contraseña=$4 WHERE id_user=$5`
+const deleteFavorito = `DELETE FROM favoritos WHERE id_fav=$1`
+
+
 
 
 const querys = {
     allUsuarios, //funcionando
-    selectUsuario,
+    selectUsuario, //funcionando
     insertUsuario, //funcionando
-    insertFavoritos,
-    busquedaUserFavoritos,
-    editUsuarios,
-    deleteUsuarios,
-    deleteFavoritos
-
-
+    insertFavorito, //funcionando
+    busquedaUserFavoritos, //funcionando
+    editUsuario, //funcionando
+    deleteUsuario, //funcionando
+    deleteFavorito //funcionando
 }
 
 module.exports = querys
