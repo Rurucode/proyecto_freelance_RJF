@@ -27,14 +27,12 @@ const busquedaTrabajo = async (req, res) => {
 
 // Obtención de los datos del usuario, insertados en el formulario de registro(sign in)
 const createUser = async (req, res) => {
-    try {
-        const result = await USER.insertUsuario(req.body.name, req.body.email, req.body.password);
-        const prueba = (req.body.name)
-        
-        return result;
-    } catch (error) {
-        res.status(400).json({"error":error});
+    const newUser = {
+        "nombre": req.body.userName,
+        "email": req.body.userEmail,
+        "contraseña": req.body.userPassword
     }
+    return await USER.insertUsuario(newUser);
 }
 
 const exportFunctions = {
