@@ -27,8 +27,6 @@ const busquedaTrabajo = async (req, res) => {
 
 // Obtención de los datos del usuario, insertados en el formulario de registro(sign in)
 const createUser = async (req, res) => {
-  
-    console.log("********************++");
     try {
         datos = {
             name: req.body.name,
@@ -36,15 +34,11 @@ const createUser = async (req, res) => {
             password: req.body.password 
         }
         const result = await functionQuerys.insertUsuario(datos);
-        res.status(200).redirect('/home_login');
+        res.status(200).redirect('/');
     } catch (error) {
-        console.log('ESTO ES REQ BODY errorrrrr------------' + req.body)
         error = 'me cago en todo'
         res.status(400).json({"error":error});
-
-
     }
-    return await USER.insertUsuario(newUser);
 }
 
 
