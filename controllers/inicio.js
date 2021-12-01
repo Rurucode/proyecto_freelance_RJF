@@ -11,8 +11,8 @@ const login = (req,res) => {
 }
 
 //Pinta el formulario de registro
-const signin = (req,res) => {
-    res.render('sign_in');
+const signup = (req,res) => {
+    res.render('sign_up');
 }
 
 //Pinta la parte de perfil una vez iniciada la sesión
@@ -41,7 +41,7 @@ const dashboard = (req,res) => {
 const vistasBasicas = {
     inicio,
     login,
-    signin,
+    signup,
     profile,
     favorites,
     users,
