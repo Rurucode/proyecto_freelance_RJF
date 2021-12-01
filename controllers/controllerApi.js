@@ -1,6 +1,6 @@
 // Definimos dos contastes que nos traen los scrap
 
-const freelancer = require("../Utils/wokana_scrap");
+const freelancer = require("../Utils/freelance_scrap");
 const peoplePerHourScrap = require("../Utils/peoplePerHour_scrap");
 const functionQuerys = require("../models/entryApi");
 const { users } = require("./inicio");
@@ -36,7 +36,7 @@ const createUser = async (req, res) => {
             password: req.body.password 
         }
         const result = await functionQuerys.insertUsuario(datos);
-        res.status(200).redirect('/');
+        res.status(200).redirect('/home_login');
     } catch (error) {
         console.log('ESTO ES REQ BODY errorrrrr------------' + req.body)
         error = 'me cago en todo'
@@ -48,9 +48,9 @@ const createUser = async (req, res) => {
 }
 
 
-const exportFunctions = {
+const controllerFunctions = {
     busquedaTrabajo,
     createUser
 }
 
-module.exports = exportFunctions;
+module.exports = controllerFunctions;
