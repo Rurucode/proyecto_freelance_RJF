@@ -157,3 +157,9 @@ const deleteFavorito = async (id_fav) => {
 
 // deleteFavorito('6')
 // .then(data => console.log(data))
+
+const userGestion = {
+    insertUsuario
+}
+
+module.exports = userGestion;

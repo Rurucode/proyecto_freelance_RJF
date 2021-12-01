@@ -1,6 +1,6 @@
 const vistasBasicas = require('../controllers/inicio');
 const routes = require('express').Router();
-const prueba = require('../controllers/controllerApi');
+const exportFunctions = require('../controllers/controllerApi');
 
 // -------- Rutas para la vistas básicas del CLIENTE -----------
 
@@ -17,6 +17,6 @@ routes.get('/users', vistasBasicas.users)
 routes.get('/dashboard', vistasBasicas.dashboard)
 
 // ----------- Ruta obtener usuario --------------
-routes.post('/user', prueba.createUser)
+routes.post('/signup', exportFunctions.createUser)
 
 module.exports = routes;
