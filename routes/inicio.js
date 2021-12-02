@@ -17,7 +17,7 @@ routes.get('/favorites', vistasBasicas.favorites);
 routes.get('/users', vistasBasicas.users)
 
 
-// ----------- Ruta obtener usuario --------------
+// ----------- Rutas Post usuario --------------
 routes.post('/signup', controllerFunctions.createUser)
 routes.post('/login', controllerFunctions.login)
 
