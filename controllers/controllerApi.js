@@ -3,19 +3,20 @@
 const freelancer = require("../Utils/wokana_scrap");
 const peoplePerHourScrap = require("../Utils/peoplePerHour_scrap");
 
+
 // Creamos una función para obtener los datos del scrap
-const busquedaTrabajo = async (req, res) => {
-
+const recogerOfertas = async (req, res) => {
     try {
-        
         // Intentamos acceder al scrap de cada uno y traernos los datos
-        const PEOPLE = await peoplePerHourScrap.scrapPeoplePerHour("https://www.peopleperhour.com/services/web+development?ref=search");
-        const FREELANCER = await freelancer.scrapFreelancer("https://www.freelancer.es/jobs/?keyword=software");
+        if(req.query.name){
+            let PEOPLE = await peoplePerHourScrap.scrapPeoplePerHour(`https://www.peopleperhour.com/services/${req.query.name}?ref=search`);
+            let FREELANCER = await freelancer.scrapFreelancer(`https://www.freelancer.es/jobs/?keyword=${req.query.name}`);
 
-        // Concatenamos los dos arrays con la información de los scrap, devolvemos un 200 en caso correcto
-        const datosOferta = PEOPLE.concat(FREELANCER);
-        res.status(200).json(datosOferta);
-        //console.log(WORKANA)
+            // Concatenamos los dos arrays con la información de los scrap, devolvemos un 200 en caso correcto
+            let datosOferta = PEOPLE.concat(FREELANCER);
+            res.status(200).json(datosOferta);
+            datosOferta = [];
+        }
 
     } catch (error) {
         res.status(404).json({"error":error})
@@ -23,4 +24,4 @@ const busquedaTrabajo = async (req, res) => {
 
 }
 
-exports.prueba = busquedaTrabajo;
+exports.recogerOfertas = recogerOfertas;

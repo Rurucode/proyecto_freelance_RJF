@@ -20,12 +20,15 @@ const scrapFreelancer = async(url) => {
         //Creamos una funcion que lo primero que hace es evaluar el contenido de dicho selector y no le entra ningun parametro
         const trabajos = await page.$$eval('.ProjectSearch-content', () => {
             //Creamos un array para guardar la información de cada oferta de trabajo e inicializamos los parametros que iran dentro del array
-            const infoTrabajos = [];
+            let infoTrabajos = [];
             let tituloTrabajo = "";
             let descripcionTrabajo = "";
             let salarioTrabajo = "";
             let urlTrabajo = "";
             
+            // if (infoTrabajos != null) {
+            //     infoTrabajos = [];
+            // }
             //Creamos un array donde le entran el numero de ofertas traidas por el selector .JobSearchCard-item y lo vamos recorriendo y añadiendolo a su respectivos parametros recogiendo de cada uno de ellos titulo,descripcion,salario y enlace
             const arrayDeOfertas = document.querySelectorAll('.JobSearchCard-item');
             arrayDeOfertas.forEach(element => {
@@ -43,10 +46,11 @@ const scrapFreelancer = async(url) => {
                 });
             });
             //Una vez finalizado el bucle devolvemos el array con toda la información
+            // console.log(infoTrabajos[0]);
             return infoTrabajos;
         });
         //console.log(trabajos);
-
+        
         //Cerramos el browser
         await browser.close();
         //Devolvemos trabajos donde le llega la info recogida del return infoTrabajos
