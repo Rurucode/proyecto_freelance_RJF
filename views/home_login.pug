@@ -9,7 +9,7 @@ head
    link(rel='shortcut icon' href='../assets/images/favicon.png' type='image/x-icon')
    script(src='https://kit.fontawesome.com/f408539d77.js' crossorigin='anonymous')
 
-body#body
+body#idBody
    div#gif
       img#loadingId(src='../assets/images/gifCodeJobs.gif' alt='imgGif')
 
@@ -26,7 +26,7 @@ body#body
                a(href='./logout') Salir
 
     form.searcherForm(action="/" method="POST")
-      input.whatSearch(type='text', name='name', placeholder='Busca ofertas de...', id="buscadorOferta")  
+      input.whatSearch(type='text', name='name', placeholder='Busca ofertas de...', id="searchOffers")  
       button(type="button", class="fas fa-search")
 
    
