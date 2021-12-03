@@ -43,7 +43,6 @@ const createUser = async (req, res) => {
 
 const login = async (req, res) => {
     try {
-
         const result = await functionQuerys.login(req.body.email, req.body.password);
         if (result == 1) {
             console.log("Es correcto estas dentro")
@@ -52,7 +51,6 @@ const login = async (req, res) => {
             console.log("Error Incorrecto ");
             res.status(401).redirect('/login');
         }
-        res.status(200).redirect('/');
     } catch (error) {
         error = 'me cago en todo'
         res.status(400).json({"error":error});
