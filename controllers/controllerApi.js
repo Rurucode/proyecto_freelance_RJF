@@ -5,6 +5,7 @@ const peoplePerHourScrap = require("../Utils/peoplePerHour_scrap");
 const functionQuerys = require("../models/entryApi");
 const { users } = require("./inicio");
 
+// ------------------------ SCRAPPING --------------------------- //
 
 // Creamos una función para obtener los datos del scrap
 const recogerOfertas = async (req, res) => {
@@ -26,6 +27,8 @@ const recogerOfertas = async (req, res) => {
 
 }
 
+// ------------------------ FUNCIONES DE LA API (CLIENTES) --------------------------- //
+
 // Obtención de los datos del usuario, insertados en el formulario de registro(sign in)
 const createUser = async (req, res) => {
     try {
@@ -42,7 +45,21 @@ const createUser = async (req, res) => {
     }
 }
 
+// ------------------------ FUNCIONES DE LA API (ADMIN) --------------------------- //
 
+
+
+
+
+
+
+
+
+
+
+
+
+// ------------------------ OBJETO QUE RECOGE LAS FUNCIONES PARA SER EXPORTADAS --------------------------- //
 const controllerFunctions = {
     recogerOfertas,
     createUser
