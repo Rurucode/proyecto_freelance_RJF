@@ -10,12 +10,12 @@ const recogerOfertas = async (req, res) => {
         // Intentamos acceder al scrap de cada uno y traernos los datos
         if(req.query.name){
             let PEOPLE = await peoplePerHourScrap.scrapPeoplePerHour(`https://www.peopleperhour.com/services/${req.query.name}?ref=search`);
-            let FREELANCER = await freelancer.scrapFreelancer(`https://www.freelancer.es/jobs/?keyword=${req.query.name}`);
+            //let FREELANCER = await freelancer.scrapFreelancer(`https://www.freelancer.es/jobs/?keyword=${req.query.name}`);
 
             // Concatenamos los dos arrays con la información de los scrap, devolvemos un 200 en caso correcto
-            let datosOferta = PEOPLE.concat(FREELANCER);
-            res.status(200).json(datosOferta);
-            datosOferta = [];
+            //let datosOferta = PEOPLE.concat(FREELANCER);
+            // console.log(datosOferta.length);
+            res.status(200).json(PEOPLE);
         }
 
     } catch (error) {
