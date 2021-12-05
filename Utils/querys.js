@@ -1,26 +1,37 @@
 // Querys de consulta, edicion, inserccion y borrado de datos de la BD.
 
-const allUsuarios = `SELECT * FROM usuarios;`
+const allUsuarios = `SELECT * FROM usuarios ORDER BY id_user;`
 
-const selectUsuario = `SELECT `
+const selectUsuario = `SELECT * FROM usuarios WHERE id_user=$1`
 
-const insertUsuarios = `INSERT INTO usuarios(nombre,email,contraseña,administrador)
+const insertUsuario = `INSERT INTO usuarios(nombre,email,contraseña,administrador)
 VALUES 
-('manowar', 'manowar@gmail.com', 'metal', false);`
+($1, $2, $3, false);`
 
-const insertFavoritos = `INSERT INTO favoritos(id_user, titulo, descripcion, salario, url)
+const insertFavorito = `INSERT INTO favoritos(id_user, titulo, descripcion, salario, url)
 VALUES 
-((SELECT id_user FROM usuarios WHERE email='fernando@gmail.com'), 'TA THE BRIDGE', 'Enseñanza de programacion', '3356€', 'http:www.infojobs/4444.com');`
+((SELECT id_user FROM usuarios WHERE email=$1), $2, $3, $4, $5);`
 
-const deleteFavoritos = `DELETE * FROM favoritos WHERE id=`
+const busquedaUserFavoritos = `SELECT * FROM favoritos WHERE id_user=$1`
+
+const editUsuario = `UPDATE usuarios SET nombre=$1, email=$2,contraseña=$3 WHERE id_user=$4`
+
+const deleteUsuario = `DELETE FROM usuarios WHERE id_user=$1`
+
+const deleteFavorito = `DELETE FROM favoritos WHERE id_fav=$1`
+
+
 
 
 const querys = {
-    allUsuarios,
-    insertUsuarios,
-    insertFavoritos,
-    deleteFavoritos,
-
+    allUsuarios, //funcionando
+    selectUsuario, //funcionando
+    insertUsuario, //funcionando
+    insertFavorito, //funcionando
+    busquedaUserFavoritos, //funcionando
+    editUsuario, //funcionando
+    deleteUsuario, //funcionando
+    deleteFavorito //funcionando
 }
 
 module.exports = querys

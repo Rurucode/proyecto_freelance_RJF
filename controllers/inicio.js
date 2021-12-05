@@ -11,8 +11,8 @@ const login = (req,res) => {
 }
 
 //Pinta el formulario de registro
-const signin = (req,res) => {
-    res.render('sign_in');
+const signup = (req,res) => {
+    res.render('sign_up');
 }
 
 //Pinta la parte de perfil una vez iniciada la sesión
@@ -22,7 +22,7 @@ const profile = (req,res) => {
 
 //Pinta la sección de favoritos una vez iniciada la sesión
 const favorites = (req,res) => {
-    res.render('favorites');
+    res.render('favorites_user');
 }
 
 // ---------- Renderizado de vistas de ADMIN una vez iniciado sesión --------
@@ -32,20 +32,19 @@ const users = (req,res) => {
     res.render('users');
 }
 
-//Pinta el crear y visualizar de los anuncios
-const dashboard = (req,res) => {
-    res.render('dashboard');
-}
+// //Pinta el crear y visualizar de los anuncios
+// const dashboard = (req,res) => {
+//     res.render('dashboard');
+// }
 
 
 const vistasBasicas = {
     inicio,
     login,
-    signin,
+    signup,
     profile,
     favorites,
     users,
-    dashboard
 };
 
 module.exports = vistasBasicas;

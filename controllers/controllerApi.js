@@ -1,7 +1,9 @@
 // Definimos dos contastes que nos traen los scrap
 
-const freelancer = require("../Utils/wokana_scrap");
+const freelancer = require("../Utils/freelance_scrap");
 const peoplePerHourScrap = require("../Utils/peoplePerHour_scrap");
+const functionQuerys = require("../models/entryApi");
+const { users } = require("./inicio");
 
 
 // Creamos una función para obtener los datos del scrap
@@ -24,4 +26,26 @@ const recogerOfertas = async (req, res) => {
 
 }
 
-exports.recogerOfertas = recogerOfertas;
+// Obtención de los datos del usuario, insertados en el formulario de registro(sign in)
+const createUser = async (req, res) => {
+    try {
+        datos = {
+            name: req.body.name,
+            email: req.body.email,
+            password: req.body.password 
+        }
+        const result = await functionQuerys.insertUsuario(datos);
+        res.status(200).redirect('/');
+    } catch (error) {
+        error = 'me cago en todo'
+        res.status(400).json({"error":error});
+    }
+}
+
+
+const controllerFunctions = {
+    recogerOfertas,
+    createUser
+}
+
+module.exports = controllerFunctions;
