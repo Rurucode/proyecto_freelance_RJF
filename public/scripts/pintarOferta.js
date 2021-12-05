@@ -13,8 +13,10 @@ buscador.addEventListener('click', async() => {
     }
     // console.log('x')
     // console.log(inputBusqueda.value);
-    const response = await fetch(`/api/search?name=${inputBusqueda.value}`);
-    let data = await response.json();
-    //console.log(data);
-    data.forEach(oferta => pintar(oferta)); 
+    let response = [];
+    response = await fetch(`/api/search?name=${inputBusqueda.value}`);
+    let data = [];
+    data = await response.json();
+    console.log(data.length);
+    data.map(oferta => pintar(oferta)); 
 });

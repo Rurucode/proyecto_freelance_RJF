@@ -2,7 +2,6 @@ const contenidoOferta  = document.createElement('div')
 contenidoOferta.setAttribute("id", "contenedorCarta")
 
 
-
 const pintar = (oferta) => {
     console.log('estoy aqui?');
 
@@ -40,5 +39,4 @@ const pintar = (oferta) => {
     
     contenidoOferta.appendChild(ofertaCreada)
     cartaOferta.appendChild(contenidoOferta);
-
 }
