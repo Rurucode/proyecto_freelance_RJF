@@ -20,7 +20,7 @@ const scrapPeoplePerHour = async(url) => {
         //Creamos una funcion que lo primero que hace es evaluar el contenido de dicho selector y no le entra ningun parametro
         const trabajos = await page.$$eval('.list⤍ResultsList⤚21s3j', () => {
             //Creamos un array para guardar la información de cada oferta de trabajo e inicializamos los parametros que iran dentro del array
-            const infoTrabajos = [];
+            let infoTrabajos = [];
             let tituloTrabajo = "";
             let descripcionTrabajo = "";
             let salarioTrabajo = "";
