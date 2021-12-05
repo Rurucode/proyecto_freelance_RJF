@@ -36,10 +36,10 @@ const selectUsuario = async (id_user) => {
 
 const insertUsuario = async (entry) => {
     let client, result;
-    const { nombre, email, contraseña } = entry;
+    const { name, email, password } = entry;
     try {
         client = await pool.connect(); // Espera a abrir conexion
-        const data = await client.query(querys.insertUsuario, [nombre, email, contraseña])
+        const data = await client.query(querys.insertUsuario, [name, email, password])
         result = data.rows
     } catch (err) {
         console.log(err);
@@ -128,12 +128,14 @@ const deleteFavorito = async (id_fav) => {
 }
 
 
+
+
 //Pruebas
 // allUsuarios()
 // .then(data=>console.log(data))
 
 
-// let newEntry = { nombre: "sauron", email: "sauron@gmail.com", contraseña: "anillo" };
+// let newEntry = { nombre: "sauronnnnnnn", email: "sasssuron@gmail.com", contraseña: "anillo" };
 // insertUsuario(newEntry)
 // .then(data=>console.log(data))
 
@@ -158,8 +160,15 @@ const deleteFavorito = async (id_fav) => {
 // deleteFavorito('6')
 // .then(data => console.log(data))
 
-const userGestion = {
-    insertUsuario
+const functionQuerys = {
+    allUsuarios,
+    selectUsuario,
+    insertUsuario,
+    insertFavoritos,
+    busquedaUserFavoritos,
+    editUsuario,
+    deleteUsuario,
+    deleteFavorito
 }
 
-module.exports = userGestion;
+module.exports = functionQuerys;
