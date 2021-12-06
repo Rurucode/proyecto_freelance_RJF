@@ -1,17 +1,22 @@
 // --------------------- Renderizado de vistas básicas de CLIENTE -------------------
 
 //Pinta el home
-const inicio = (req,res) => {
+const home_guess = (req,res) => {
     res.render('home_guess');
 }
 
 //Pinta el formulario de loggeo
-const login = (req,res) => {
+const log_in = (req,res) => {
     res.render('log_in');
 }
 
+//Pinta la home para usuarios logeados.
+const home_login = (req,res) => {
+    res.render('home_login');
+}
+
 //Pinta el formulario de registro
-const signup = (req,res) => {
+const sign_up = (req,res) => {
     res.render('sign_up');
 }
 
@@ -21,7 +26,7 @@ const profile = (req,res) => {
 }
 
 //Pinta la sección de favoritos una vez iniciada la sesión
-const favorites = (req,res) => {
+const favorites_user = (req,res) => {
     res.render('favorites_user');
 }
 
@@ -39,12 +44,14 @@ const users = (req,res) => {
 
 
 const vistasBasicas = {
-    inicio,
-    login,
-    signup,
+    home_guess,
+    log_in,
+    home_login,
+    sign_up,
     profile,
-    favorites,
+    favorites_user,
     users,
+    
 };
 
 module.exports = vistasBasicas;

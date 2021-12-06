@@ -25,11 +25,17 @@ body#idBody
             li
                a(href='./logout') Salir
 
+
+      form.searcherForm(action="/" method="POST")
+         input.whatSearch(type='text', name='name', placeholder='Busca ofertas de...', id="buscadorOferta")  
+         button(type="button", class="fas fa-search")
+
    div#searchDiv.searcherDiv
       input.whatSearch(type='text', name='name', placeholder='Busca ofertas de...',  id="buscadorOferta")  
       button.iconLupa(class="fas fa-search", id="botonBuscador")
 
    section#cartaOferta
+
 
    footer#footer.footerMenu
       nav#footerMenu.menuInferior
