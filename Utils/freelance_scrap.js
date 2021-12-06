@@ -7,7 +7,7 @@ const scrapFreelancer = async(url) => {
     try {
         console.log('Opening browser');
         //Creamos la constante browser donde le entra el chronium lanzado
-        const browser = await puppeteer.launch({headless: false});
+        const browser = await puppeteer.launch({headless: true});
 
         //Nueva pagina y con goto navegamos hacia ella
         const page = await browser.newPage();

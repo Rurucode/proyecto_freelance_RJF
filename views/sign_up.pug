@@ -18,7 +18,7 @@ body#body.formBody
       a#enlaceGoogle.enlaces(href="https://www.google.com/intl/es/gmail/about/") CONTINUAR CON GMAIL
       p.sectionP o
 
-   form#bodyForm(action="/signup" method="post")
+   form#bodyForm(action="/api/user" method="post")
       input#name(type="text", name="name" placeholder="Nombre de usuario")
       input#email(type="email", name="email" placeholder="Correo electrónico")
       input#password(type="password", name="password" placeholder="Contraseña")
