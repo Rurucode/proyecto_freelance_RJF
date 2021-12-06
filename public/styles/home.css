@@ -132,6 +132,7 @@ ul {
 .layer p{
     color:#F7F8F9;
     font-family: 'outfit';
+    cursor: pointer;
 }
 
 .layer p:hover{
@@ -151,7 +152,45 @@ ul {
 
 /****************** SECTION PUBLICACIONES TRABAJO ******************/
 
+#contenedorCarta{
+    display: flex;
+    justify-content: flex-start;
+    font-family: 'outfit';
+    color: #1B1C1E;
+    margin: 48px 80px;
+    align-content: stretch;
+    align-items: stretch;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
 
+.detail-card{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #ebebeb;
+    padding: 16px;
+    width: 300px;
+    height: auto;
+    border-radius: 16px;
+    margin: 12px;
+}
+
+.precioOferta{
+    font-size: 20px;
+}
+
+.descripcionOferta{
+    font-size: 12px;
+}
+
+.classEnviarInput{
+    border: 1px solid #faf6c0;
+    background-color: #faf6c0;
+    cursor: pointer;
+    border-radius: 16px;
+}
 
 /****************** FOOTER ******************/
 

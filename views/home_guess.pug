@@ -24,10 +24,8 @@ body#idBody
                a(href='./login') Iniciar sesión
 
    div#searchDiv.searcherDiv
-      input.whatSearch(type='text', name='name', placeholder='Busca ofertas de...',  id="searchOffers")  
-      button.iconLupa(type="button", class="fas fa-search", id="botonBuscador")
-
-   section#cartaOferta
+      input.whatSearch(type='text', name='name', placeholder='Busca ofertas de...',  id="buscadorOferta")  
+      button.iconLupa(class="fas fa-search", id="botonBuscador")
 
    div#menuSecundario.menuIntermedio
       ul#menuProfesiones.profesionesMenu
@@ -63,6 +61,8 @@ body#idBody
             div.layer
                p BackEnd
                img.circuloRosa(src='../assets/images/circulo_degradado.png' alt="circuloRosa")
+
+   section#cartaOferta
                
    footer#footer.footerMenu
       nav#footerMenu.menuInferior

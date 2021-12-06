@@ -4,8 +4,9 @@ const routes = require('express').Router();
 
 // -------- Rutas para la vistas básicas del CLIENTE -----------
 
-routes.post('/user', funcionesApi.createUser); // Registrarse en la aplicacion
-routes.put('/user', funcionesApi.recogerOfertas); // Edita datos del perfil del usuario o admin
+routes.post('/signup', funcionesApi.createUser); // Registrarse en la aplicacion
+routes.get('/signup', funcionesApi.createUser); 
+routes.put('/signup', funcionesApi.recogerOfertas); // Edita datos del perfil del usuario o admin
 routes.post('/login', funcionesApi.recogerOfertas); // Hacer login en la app
 routes.post('/logout', funcionesApi.recogerOfertas); // Salir
 routes.get('/search', funcionesApi.recogerOfertas); // Listado de resultados de la busqueda
