@@ -41,28 +41,26 @@ const createUser = async (req, res) => {
     }
 }
 
-const login = async (req, res) => {
+// Consulta la BD para buscar email y contraseña.
+const login = async (req, res, next) => {
     try {
         const result = await functionQuerys.login(req.body.email, req.body.password);
         if (result) {
-
-            const payload = {
+            const consulta = {
                 email: result.email,
                 role: result.administrador
             }
-
-            const token = jwt.sign({ user: payload }, process.env.jwt_secret);
+            const token = jwt.sign({ user: consulta }, process.env.jwt_secret); //Crea el toquen con la informacion de la consulta
             res.cookie("access_token", token, {
                     httpOnly: true,
                     // secure: process.env.NODE_ENV === "production"
                     secure: false
                 })
                 .status(200)
-                .json({ message: "Logged in successfully 😊 👌" });
+                return next();
+            
+                
 
-
-            // console.log("Es correcto estas dentro")
-            // res.status(200).redirect('/');
         } else {
             console.log("Error Incorrecto ");
             res.status(401).redirect('/login');

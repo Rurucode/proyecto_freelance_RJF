@@ -6,12 +6,13 @@ const jsonwebtoken = require('../controllers/jwt')
 
 // -------- Rutas para la vistas básicas del CLIENTE -----------
 
-routes.get('/', vistasBasicas.inicio);
-routes.get('/login', vistasBasicas.login);
-routes.get('/signup', vistasBasicas.signup);
+routes.get('/', vistasBasicas.home_guess);
+routes.get('/login', vistasBasicas.log_in);
+routes.get('/signup', vistasBasicas.sign_up);
 routes.get('/profile', jsonwebtoken.authorization, vistasBasicas.profile);
-routes.get('/favorites', vistasBasicas.favorites);
+routes.get('/favorites', vistasBasicas.favorites_user);
 routes.get('/logout', jsonwebtoken.logout);
+routes.get('/home_login', vistasBasicas.home_login)
 
 // routes.get("/protected", jsonwebtoken.authorization ,jsonwebtoken.protected);
   
@@ -28,6 +29,6 @@ routes.get('/users', vistasBasicas.users)
 
 // ----------- Rutas Post usuario --------------
 routes.post('/signup', controllerFunctions.createUser)
-routes.post('/login', controllerFunctions.login)
+routes.post('/login', controllerFunctions.login, vistasBasicas.home_login)
 
 module.exports = routes;
