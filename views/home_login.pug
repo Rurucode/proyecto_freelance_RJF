@@ -9,7 +9,7 @@ head
    link(rel='shortcut icon' href='../assets/images/favicon.png' type='image/x-icon')
    script(src='https://kit.fontawesome.com/f408539d77.js' crossorigin='anonymous')
 
-body#body
+body#idBody
    div#gif
       img#loadingId(src='../assets/images/gifCodeJobs.gif' alt='imgGif')
 
@@ -25,11 +25,18 @@ body#body
             li
                a(href='./logout') Salir
 
+
       form.searcherForm(action="/" method="POST")
          input.whatSearch(type='text', name='name', placeholder='Busca ofertas de...', id="buscadorOferta")  
          button(type="button", class="fas fa-search")
 
-   
+   div#searchDiv.searcherDiv
+      input.whatSearch(type='text', name='name', placeholder='Busca ofertas de...',  id="buscadorOferta")  
+      button.iconLupa(class="fas fa-search", id="botonBuscador")
+
+   section#cartaOferta
+
+
    footer#footer.footerMenu
       nav#footerMenu.menuInferior
          ul#menuMovil.menuResponsive
@@ -45,3 +52,6 @@ body#body
             li
                a(href='./logout')
                   <i class="fas fa-sign-out-alt" id="iconLogOut"></i>
+
+   script(src='scripts/creacionDOM.js')
+   script(src='scripts/pintarOferta.js')

@@ -9,7 +9,7 @@ head
    link(rel='shortcut icon' href='../assets/images/favicon.png' type='image/x-icon')
    script(src='https://kit.fontawesome.com/f408539d77.js' crossorigin='anonymous')
 
-body#body
+body#idBody
    div#gif
       img#loadingId(src='../assets/images/gifCodeJobs.gif' alt='imgGif')
 
@@ -23,37 +23,47 @@ body#body
             li
                a(href='./login') Iniciar sesión
 
-   div.searcherDiv
+   div#searchDiv.searcherDiv
       input.whatSearch(type='text', name='name', placeholder='Busca ofertas de...',  id="buscadorOferta")  
-      button.iconLupa(type="button", class="fas fa-search")
+      button.iconLupa(class="fas fa-search", id="botonBuscador")
 
    div#menuSecundario.menuIntermedio
       ul#menuProfesiones.profesionesMenu
-         li.layer
-            p Full Stack
-            img.circuloRosa(src='../assets/images/circulo_degradado.png' alt="circuloRosa")
-         li.layer
-            p Ciber
-            img.circuloRosa(src='../assets/images/circulo_degradado.png' alt="circuloRosa")
-         li.layer
-            p Marketing
-            img.circuloRosa(src='../assets/images/circulo_degradado.png' alt="circuloRosa")
-         li.layer
-            p UX/UI
-            img.circuloRosa(src='../assets/images/circulo_degradado.png' alt="circuloRosa")
-         li.layer
-            p Data
-            img.circuloRosa(src='../assets/images/circulo_degradado.png' alt="circuloRosa")
-         li.layer
-            p Designer
-            img.circuloRosa(src='../assets/images/circulo_degradado.png' alt="circuloRosa")
-         li.layer
-            p FrontEnd
-            img.circuloRosa(src='../assets/images/circulo_degradado.png' alt="circuloRosa")
-         li.layer
-            p BackEnd
-            img.circuloRosa(src='../assets/images/circulo_degradado.png' alt="circuloRosa")
+         li
+            div.layer
+               p Full Stack
+               img.circuloRosa(src='../assets/images/circulo_degradado.png' alt="circuloRosa")
+         li
+            div.layer
+               p Ciber
+               img.circuloRosa(src='../assets/images/circulo_degradado.png' alt="circuloRosa")
+         li
+            div.layer
+               p Marketing
+               img.circuloRosa(src='../assets/images/circulo_degradado.png' alt="circuloRosa")
+         li
+            div.layer
+               p UX/UI
+               img.circuloRosa(src='../assets/images/circulo_degradado.png' alt="circuloRosa")
+         li
+            div.layer
+               p Data
+               img.circuloRosa(src='../assets/images/circulo_degradado.png' alt="circuloRosa")
+         li
+            div.layer
+               p Designer
+               img.circuloRosa(src='../assets/images/circulo_degradado.png' alt="circuloRosa")
+         li
+            div.layer
+               p FrontEnd
+               img.circuloRosa(src='../assets/images/circulo_degradado.png' alt="circuloRosa")
+         li
+            div.layer
+               p BackEnd
+               img.circuloRosa(src='../assets/images/circulo_degradado.png' alt="circuloRosa")
 
+   section#cartaOferta
+               
    footer#footer.footerMenu
       nav#footerMenu.menuInferior
          ul#menuMovil.menuResponsive
@@ -69,3 +79,6 @@ body#body
             li
                a(href='./logout')
                   <i class="fas fa-sign-out-alt" id="iconLogOut"></i>
+
+   script(src='scripts/creacionDOM.js')
+   script(src='scripts/pintarOferta.js')
