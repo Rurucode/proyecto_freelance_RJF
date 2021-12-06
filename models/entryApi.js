@@ -132,7 +132,9 @@ const login = async (email, password) => {
     try {
         client = await pool.connect(); // Espera a abrir conexion
         const data = await client.query(querys.login, [email, password])
-        result = data.rowCount
+        // result = data.rowCount
+        result = data.rows[0];
+        console.log(result);
     } catch (err) {
         console.log(err);
         throw err;

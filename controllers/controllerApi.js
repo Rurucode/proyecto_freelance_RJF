@@ -1,5 +1,5 @@
 // Definimos dos contastes que nos traen los scrap
-
+const jwt = require('jsonwebtoken')
 const freelancer = require("../Utils/freelance_scrap");
 const peoplePerHourScrap = require("../Utils/peoplePerHour_scrap");
 const functionQuerys = require("../models/entryApi");
@@ -44,9 +44,25 @@ const createUser = async (req, res) => {
 const login = async (req, res) => {
     try {
         const result = await functionQuerys.login(req.body.email, req.body.password);
-        if (result == 1) {
-            console.log("Es correcto estas dentro")
-            res.status(200).redirect('/');
+        if (result) {
+
+            const payload = {
+                email: result.email,
+                role: result.administrador
+            }
+
+            const token = jwt.sign({ user: payload }, process.env.jwt_secret);
+            res.cookie("access_token", token, {
+                    httpOnly: true,
+                    // secure: process.env.NODE_ENV === "production"
+                    secure: false
+                })
+                .status(200)
+                .json({ message: "Logged in successfully 😊 👌" });
+
+
+            // console.log("Es correcto estas dentro")
+            // res.status(200).redirect('/');
         } else {
             console.log("Error Incorrecto ");
             res.status(401).redirect('/login');
