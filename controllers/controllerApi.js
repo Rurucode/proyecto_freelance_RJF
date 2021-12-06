@@ -79,21 +79,11 @@ const login = async (req, res, next) => {
 
 
 
-
-
-
-
-
-
-
-
-
 // ------------------------ OBJETO QUE RECOGE LAS FUNCIONES PARA SER EXPORTADAS --------------------------- //
 const controllerFunctions = {
-    busquedaTrabajo,
     createUser,
     login,
-    recogerOfertas,
+    recogerOfertas
 }
 
 module.exports = controllerFunctions;
