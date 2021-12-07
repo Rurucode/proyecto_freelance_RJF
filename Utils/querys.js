@@ -20,6 +20,8 @@ const deleteUsuario = `DELETE FROM usuarios WHERE id_user=$1`
 
 const deleteFavorito = `DELETE FROM favoritos WHERE id_fav=$1`
 
+const login = `SELECT * FROM usuarios WHERE email=$1 AND contraseña=$2`
+
 
 
 
@@ -31,7 +33,8 @@ const querys = {
     busquedaUserFavoritos, //funcionando
     editUsuario, //funcionando
     deleteUsuario, //funcionando
-    deleteFavorito //funcionando
+    deleteFavorito, //funcionando
+    login
 }
 
 module.exports = querys
