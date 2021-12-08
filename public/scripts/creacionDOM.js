@@ -10,7 +10,7 @@ const pintar = (oferta) => {
     ofertaCreada.setAttribute('id', 'plantillaOferta')
 
     const title  = document.createElement('h2')
-    title.innerText = `${oferta.titulo}`
+    
     title.setAttribute('class', 'tituloOferta')
 
     const price  = document.createElement('p')
@@ -30,9 +30,10 @@ const pintar = (oferta) => {
 
     const enlaceOferta = document.createElement("a");
     enlaceOferta.setAttribute("href", oferta.url);
+    enlaceOferta.innerText = `${oferta.titulo}`
     
 
-    ofertaCreada.appendChild(enlaceOferta);
+    title.appendChild(enlaceOferta);
     ofertaCreada.appendChild(title)
     ofertaCreada.appendChild(price)
     ofertaCreada.appendChild(description)
