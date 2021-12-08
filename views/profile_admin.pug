@@ -1,0 +1,57 @@
+doctype html
+head
+   meta(charset='UTF-8')
+   meta(http-equiv='X-UA-Compatible' content='IE=edge')
+   meta(name='viewport' content='width=device-width, initial-scale=1.0')
+   title COD3 (JOBS)
+   link(rel='stylesheet' href='../styles/profile.css')
+   link(rel='stylesheet' href='../styles/normalize.css')
+   link(rel='shortcut icon' href='../assets/images/favicon.png' type='image/x-icon')
+   script(src='https://kit.fontawesome.com/f408539d77.js' crossorigin='anonymous')
+
+body#body
+   div#gif
+      img#loadingId(src='../assets/images/gifCodeJobs.gif' alt='imgGif')
+
+   header#header
+      a(href='./')
+         img#logotipo.logotipoSuperior(src='../assets/images/logotipo_final_black.png' alt='logotipoHome')
+      nav#headerMenu.menuPrincipal
+         ul#pcMenu.menuPc
+            li
+               a(href='./') Inicio
+            li
+               a(href='./profile')#profileColor Tu cuenta
+            li
+               a(href='./favorites') Favoritos
+            li
+               a(href='./logout') Salir
+
+   div#containUserProfile
+      form#yourProfile
+         h3 Edita y guarda los cambios de tu perfil
+         input#name.inputOptions(type="text", name="name" placeholder="Nombre de usuario")
+         input#email.inputOptions(type="email", name="email" placeholder="Correo electrónico")
+         input#password.inputOptions(type="password", name="password" placeholder="Password")
+         div#divButtons
+            button#cancelButton.profileButtons Cancelar
+            button#saveButton.profileButtons Guardar
+      
+      div#divIllustration
+         img#userImage(src='' alt='userImg')
+ 
+   footer#footer.footerMenu
+      nav#footerMenu.menuInferior
+         ul#menuMovil.menuResponsive
+            li
+               a(href='./')
+                  <i class="fas fa-home" id="iconHome"></i>
+            li
+               a(href='./profile')
+                  <i class="fas fa-user" id="iconUser"></i>
+            li
+               a(href='./favorites')
+                  <i class="fas fa-heart" id="iconFavorites"></i>
+            li
+               a(href='./logout')
+                  <i class="fas fa-sign-out-alt" id="iconLogOut"></i>

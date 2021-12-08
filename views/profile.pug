@@ -27,11 +27,19 @@ body#body
             li
                a(href='./logout') Salir
 
-   form#yourProfile.userProfile
-      input#name(type="text", name="name" placeholder="Nombre de usuario")
-      input#email(type="email", name="email" placeholder="Correo electrónico")
-      input#password(type="password", name="password" placeholder="Contraseña")
-               
+   div#containUserProfile
+      form#yourProfile
+         h3 Edita y guarda los cambios de tu perfil
+         input#name.inputOptions(type="text", name="name" placeholder="Nombre de usuario")
+         input#email.inputOptions(type="email", name="email" placeholder="Correo electrónico")
+         input#password.inputOptions(type="password", name="password" placeholder="Password")
+         div#divButtons
+            button#cancelButton.profileButtons Cancelar
+            button#saveButton.profileButtons Guardar
+      
+      div#divIllustration
+         img#userImage(src='../assets/images/profile_user_illustration.png' alt='userImg')
+ 
    footer#footer.footerMenu
       nav#footerMenu.menuInferior
          ul#menuMovil.menuResponsive
