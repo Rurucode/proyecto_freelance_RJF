@@ -14,7 +14,7 @@ buscador.addEventListener('click', async() => {
     // console.log('x')
     // console.log(inputBusqueda.value);
     let response = [];
-    response = await fetch(`/api/search?name=${inputBusqueda.value}`);
+    response = await fetch(`/search?name=${inputBusqueda.value}`);
     let data = [];
     data = await response.json();
     console.log(data.length);
