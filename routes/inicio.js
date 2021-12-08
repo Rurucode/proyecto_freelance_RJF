@@ -9,9 +9,9 @@ routes.get('/', vistasBasicas.home_guess);
 routes.get('/login', vistasBasicas.log_in);
 routes.get('/signup', vistasBasicas.sign_up);
 routes.get('/profile', jsonwebtoken.authorization, vistasBasicas.profile);
-routes.get('/favorites', vistasBasicas.favorites_user);
+routes.get('/favorites', jsonwebtoken.authorization, vistasBasicas.favorites_user);
 routes.get('/logout', jsonwebtoken.logout);
-routes.get('/home_login', vistasBasicas.home_login)
+routes.get('/home_login', jsonwebtoken.authorization, vistasBasicas.home_login)
 
 // routes.get("/protected", jsonwebtoken.authorization ,jsonwebtoken.protected);
   
@@ -22,7 +22,9 @@ routes.get('/dashboard', vistasBasicas.users); // Vista del administrador para c
 
 // ----------- Rutas Post usuario --------------
 routes.post('/signup', controllerFunctions.createUser)
-routes.post('/login', controllerFunctions.login, vistasBasicas.home_login)
+routes.post('/login', controllerFunctions.login)
 
+// ----------- Rutas Api -----------------
+routes.get('/search', controllerFunctions.recogerOfertas); // Listado de resultados de la busqueda
 
 module.exports = routes;
