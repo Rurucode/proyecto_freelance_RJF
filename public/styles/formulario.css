@@ -74,7 +74,7 @@
     color: #F7F8F9;
     font-family: 'outfit';
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
     flex-direction: column;
