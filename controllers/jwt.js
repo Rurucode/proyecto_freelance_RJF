@@ -17,11 +17,12 @@ const authorization = (req, res, next) => {
 };
 
 // Borra las cookies
-const logout = (req, res) => {
+const logout = (req, res, next) => {
     return res
         .clearCookie("access_token")
         .status(200)
-        .json({ message: "Successfully logged out 😏 🍀" });
+        .redirect('/')
+        
 };
 
 // Lee la informacion almacenada en la cookie
