@@ -3,7 +3,7 @@ const express = require('express')
 require('dotenv').config();
 const rutasInicio = require('./routes/inicio')
 const cookieParser = require("cookie-parser"); //Para las cookies
-const rutasApi = require('./routes/routesApi')
+
 
 /****************** Enable Express ******************/
 const app = express()
@@ -20,7 +20,7 @@ app.set('views','./views');
 
 /****************** Paths ******************/
 app.use('/', rutasInicio);
-app.use('/api', rutasApi);
+
 
 
 
