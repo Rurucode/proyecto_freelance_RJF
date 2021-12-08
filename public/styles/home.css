@@ -154,7 +154,7 @@ ul {
 
 #contenedorCarta{
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     font-family: 'outfit';
     color: #1B1C1E;
     margin: 48px 80px;
@@ -175,6 +175,9 @@ ul {
     height: auto;
     border-radius: 16px;
     margin: 12px;
+    -webkit-box-shadow: 0px 1px 10px 0px #232B3D; 
+    box-shadow: 0px 1px 10px 0px #232B3D;
+    overflow: hidden;
 }
 
 .precioOferta{
@@ -190,6 +193,12 @@ ul {
     background-color: #faf6c0;
     cursor: pointer;
     border-radius: 16px;
+}
+
+.classEnviarInput:hover{
+    border: 1px solid #F7E811;
+    background-color: #F7E811;
+    cursor: pointer;
 }
 
 /****************** FOOTER ******************/
