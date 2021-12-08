@@ -19,8 +19,8 @@ body#body.formBody
       p.sectionP o
 
    form#bodyForm.bodyForm(action="/login" method="post")
-      input(type="email", name="email" placeholder="Correo electrónico")
-      input(type="password", name="password" placeholder="Contraseña")
+      input#email(type="email", name="email" placeholder="Correo electrónico")
+      input#password(type="password", name="password" placeholder="Contraseña")
       input.sendForm(type="submit", value="Iniciar sesión")
       
    footer#footerLink.footerLink
