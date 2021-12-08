@@ -24,6 +24,7 @@
     max-width: 50vw;
 }
 /****************** HEADER ******************/
+
 #header{
     margin: 50px 80px;
     display: flex;
@@ -60,6 +61,94 @@ ul {
 .menuPrincipal ul li{
     list-style: none;
     display: inline;
+}
+
+/****************** SECTION YOUR PROFILE ******************/
+
+#containUserProfile{
+    display:flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+#yourProfile{
+    width: 500px;
+    height: auto;
+    min-height: 600px;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#yourProfile h3{
+    font-family: 'outfit';
+    font-size: 24px;
+}
+
+.inputOptions{
+    width: 280px;
+    height: 40px;
+    margin: 12px;
+    border-radius: 12px;
+    border: 2px solid #1B1C1E;
+    text-align: center;
+}
+
+#iconPencilName{
+    color:#1B1C1E;
+    cursor: pointer;
+    margin: 12px;
+}
+
+#divButtons{
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 12px;
+}
+
+.profileButtons{
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#cancelButton{
+    color: #1B1C1E;
+    background: transparent;
+    border: 2px solid #ffc954;
+    border-radius: 6px;
+    margin-right: 50px;
+    font-family: 'outfit';
+    font-size: 16px;
+    padding: 8px;
+}
+
+#cancelButton:hover{
+    color: #F7F8F9;
+    background: #ffc954;
+}
+
+#saveButton{
+    color: #1B1C1E;
+    background: transparent;
+    border: 2px solid #97a33d;
+    border-radius: 6px;
+    margin-left: 50px;
+    font-family: 'outfit';
+    font-size: 16px;
+    padding: 8px;
+}
+
+#saveButton:hover{
+    color: #F7F8F9;
+    background: #97a33d;
+}
+
+#userImage{
+    width: 600px;
 }
 
 /****************** FOOTER ******************/
