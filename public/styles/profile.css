@@ -93,7 +93,7 @@ ul {
     margin: 12px;
 }
 
-.inputOptions{
+.fieldsetOptions{
     width: 280px;
     height: 40px;
     margin: 12px;
@@ -102,10 +102,11 @@ ul {
     text-align: center;
 }
 
-#iconPencilName{
+.legendStyle{
+    font-family: 'outfit';
+    text-align: left;
+    padding: 0 8px;
     color:#1B1C1E;
-    cursor: pointer;
-    margin: 12px;
 }
 
 #divButtons{
@@ -117,6 +118,7 @@ ul {
 .profileButtons{
     border-radius: 8px;
     cursor: pointer;
+    width: 88px;
 }
 
 #cancelButton{

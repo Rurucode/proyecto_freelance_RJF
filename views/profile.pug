@@ -30,9 +30,12 @@ body#body
    div#containUserProfile
       form#yourProfile
          h3 Edita y guarda los cambios de tu perfil
-         input#name.inputOptions(type="text", name="name" placeholder="Nombre de usuario")
-         input#email.inputOptions(type="email", name="email" placeholder="Correo electrónico")
-         input#password.inputOptions(type="password", name="password" placeholder="Password")
+         fieldset#name.fieldsetOptions(type="text", name="name" placeholder="Nombre de usuario")
+            legend.legendStyle Nombre de usuario
+         fieldset#email.fieldsetOptions(type="email", name="email" placeholder="Correo electrónico")
+            legend.legendStyle Correo electrónico
+         fieldset#password.fieldsetOptions(type="password", name="password" placeholder="Password")
+            legend.legendStyle Password
          div#divButtons
             button#cancelButton.profileButtons Cancelar
             button#saveButton.profileButtons Guardar
