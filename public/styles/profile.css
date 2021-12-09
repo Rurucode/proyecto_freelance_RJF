@@ -93,7 +93,7 @@ ul {
     margin: 12px;
 }
 
-.inputOptions{
+.fieldsetOptions{
     width: 280px;
     height: 40px;
     margin: 12px;
@@ -102,10 +102,10 @@ ul {
     text-align: center;
 }
 
-#iconPencilName{
-    color:#1B1C1E;
-    cursor: pointer;
-    margin: 12px;
+.information{
+    margin-bottom: 0;
+    text-align: left;
+    font-family: 'outfit';
 }
 
 #divButtons{
@@ -117,6 +117,7 @@ ul {
 .profileButtons{
     border-radius: 8px;
     cursor: pointer;
+    width: 88px;
 }
 
 #cancelButton{
@@ -174,54 +175,73 @@ nav.menuInferior{
         display: none; 
     }
 }
+
 .footerMenu{
     width: 100%;
     position: fixed;
     bottom: 0;
     background-color: #1B1C1E;
 }
+
 .menuInferior{
     list-style: none;
-    font-size: 30px;
+    font-size: 16px;
     font-family: 'outfit';
 }
+
 ul {
     display: flex;
     justify-content: center;
 }
+
 .menuInferior ul li{
     display: inline;
 }
+
 .menuResponsive{
     justify-content: center;
 }
+
 .menuResponsive li a{
     text-decoration: none;
     padding: 24px 40px;
     color: #F7F8F9;
 }
+
+.menuResponsive li a img{
+    width: 30px;
+}
+
 /****************** FOOTER ICONS ******************/
+
 #iconHome{
     color: #F7F8F9;
 }
+
 #iconHome:hover{
     color: #29C4F8;
 }
+
 #iconUser{
     color: #29C4F8;
 }
+
 #iconUser:hover{
     color: #29C4F8;
 }
+
 #iconFavorites{
     color: #F7F8F9;
 }
+
 #iconFavorites:hover{
     color: #29C4F8;
 }
+
 #iconLogOut{
     color: #F7F8F9;
 }
+
 #iconLogOut:hover{
     color: #29C4F8;
 }

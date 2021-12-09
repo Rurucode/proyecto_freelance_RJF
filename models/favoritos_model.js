@@ -24,3 +24,10 @@ const favoritos = mongoose.Schema(favoriteSchema);
 const Favoritos = mongoose.model('Favoritos', favoritos);
 
 module.exports = Favoritos;
+
+
+// const botonFavoritos = document.getElementsByClassName('classEnviarInput');
+
+// botonFavoritos.addEventListener('click', async() => {
+
+// })

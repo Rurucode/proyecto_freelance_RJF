@@ -101,6 +101,7 @@ ul {
     cursor: pointer;
     min-width: 50px;
     margin-left: -50px;
+    padding: 2px;
 }
 
 #botonBuscador{
@@ -125,6 +126,7 @@ ul {
     align-items: center;
     text-align: center;
     margin: 48px 64px;
+    cursor: pointer;
 }
 
 .layer img{
@@ -137,7 +139,6 @@ ul {
 .layer p{
     color:#F7F8F9;
     font-family: 'outfit';
-    cursor: pointer;
 }
 
 .layer p:hover{
@@ -250,6 +251,7 @@ nav.menuInferior{
         display: none; 
     }
 }
+
 .footerMenu{
     width: 100%;
     height: auto;
@@ -257,50 +259,67 @@ nav.menuInferior{
     bottom: 0;
     background-color: #1B1C1E;
 }
+
 .menuInferior{
     list-style: none;
-    font-size: 30px;
+    font-size: 16px;
     font-family: 'outfit';
 }
+
 ul {
     display: flex;
     justify-content: center;
     padding-inline-start: 0px;
 }
+
 .menuInferior ul li{
     display: inline;
 }
+
 .menuResponsive ul{
     display: flex;
     justify-content: center;
 }
+
 .menuResponsive li a{
     text-decoration: none;
     padding: 24px 40px;
     color: #F7F8F9;
 }
+
+.menuResponsive li a img{
+    width: 30px;
+}
+
 /****************** FOOTER ICONS ******************/
 #iconHome{
     color: #29C4F8;
 }
+
 #iconHome:hover{
     color: #29C4F8;
 }
+
 #iconUser{
     color: #F7F8F9;
 }
+
 #iconUser:hover{
     color: #29C4F8;
 }
+
 #iconFavorites{
     color: #F7F8F9;
 }
+
 #iconFavorites:hover{
     color: #29C4F8;
 }
+
 #iconLogOut{
     color: #F7F8F9;
 }
+
 #iconLogOut:hover{
     color: #29C4F8;
 }

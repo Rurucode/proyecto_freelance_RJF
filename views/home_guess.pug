@@ -10,8 +10,6 @@ head
    script(src='https://kit.fontawesome.com/f408539d77.js' crossorigin='anonymous')
 
 body#idBody
-   div#gif
-      img#loadingId(src='../assets/images/gifCodeJobs.gif' alt='imgGif')
 
    header#header
       a(href='./')
@@ -25,40 +23,40 @@ body#idBody
 
    div#searchDiv.searcherDiv
       input.whatSearch(type='text', name='name', placeholder='Busca ofertas de...',  id="buscadorOferta")  
-      button.iconLupa(class="fas fa-search", id="botonBuscador")
+      img.iconLupa#botonBuscador(src="../assets/images/lupa.png", alt="lupa")
 
    div#menuSecundario.menuIntermedio
       ul#menuProfesiones.profesionesMenu
          li
-            div.layer
+            div.layer#fullStack
                p Full Stack
                img.circuloRosa(src='../assets/images/circulo_degradado.png' alt="circuloRosa")
          li
-            div.layer
+            div.layer#ciber
                p Ciber
                img.circuloRosa(src='../assets/images/circulo_degradado.png' alt="circuloRosa")
          li
-            div.layer
+            div.layer#marketing
                p Marketing
                img.circuloRosa(src='../assets/images/circulo_degradado.png' alt="circuloRosa")
          li
-            div.layer
+            div.layer#uxUi
                p UX/UI
                img.circuloRosa(src='../assets/images/circulo_degradado.png' alt="circuloRosa")
          li
-            div.layer
+            div.layer#data
                p Data
                img.circuloRosa(src='../assets/images/circulo_degradado.png' alt="circuloRosa")
          li
-            div.layer
+            div.layer#designer
                p Designer
                img.circuloRosa(src='../assets/images/circulo_degradado.png' alt="circuloRosa")
          li
-            div.layer
+            div.layer#frontend
                p FrontEnd
                img.circuloRosa(src='../assets/images/circulo_degradado.png' alt="circuloRosa")
          li
-            div.layer
+            div.layer#backend 
                p BackEnd
                img.circuloRosa(src='../assets/images/circulo_degradado.png' alt="circuloRosa")
 
@@ -68,19 +66,19 @@ body#idBody
                
    footer#footer.footerMenu
       nav#footerMenu.menuInferior
-         ul#menuMovil.menuResponsive
+        ul#menuMovil.menuResponsive
             li
                a(href='./')
-                  <i class="fas fa-home" id="iconHome"></i>
+                  img#iconHome(src='../assets/images/home.png' alt="home")
             li
                a(href='./profile')
-                  <i class="fas fa-user" id="iconUser"></i>
+                  img#iconUser(src='../assets/images/profile.png' alt="profile")
             li
                a(href='./favorites')
-                  <i class="fas fa-heart" id="iconFavorites"></i>
+                  img#iconFavorites(src='../assets/images/favorite.png' alt="favorite")
             li
                a(href='./logout')
-                  <i class="fas fa-sign-out-alt" id="iconLogOut"></i>
+                  img#iconLogOut(src='../assets/images/logout.png' alt="logout")
 
    script(src='scripts/creacionDOM.js')
    script(src='scripts/pintarOferta.js')
