@@ -1,14 +1,20 @@
 /****************** Dependencies ******************/
 const express = require('express')
+const session = require('express-session');
 require('dotenv').config();
 const rutasInicio = require('./routes/inicio')
 const cookieParser = require("cookie-parser"); //Para las cookies
-
+require('./middlewares/google-auth')
+const passport = require('passport')
 
 /****************** Enable Express ******************/
 const app = express()
 const port = 3000
 
+//Oauth
+app.use(session({ secret: 'cats', resave: false, saveUninitialized: true }));
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use(express.json()); //Para habilitar envio de JSON al servidor
 app.use(express.static('public')); //Habilitar los archivos para que sean estaticos
