@@ -2,7 +2,7 @@
 
 const allUsuarios = `SELECT * FROM usuarios ORDER BY id_user;`
 
-const selectUsuario = `SELECT * FROM usuarios WHERE id_user=$1`
+const selectUsuario = `SELECT * FROM usuarios WHERE email=$1`
 
 const insertUsuario = `INSERT INTO usuarios(nombre,email,contraseña,administrador)
 VALUES 
@@ -14,7 +14,7 @@ VALUES
 
 const busquedaUserFavoritos = `SELECT * FROM favoritos WHERE id_user=$1`
 
-const editUsuario = `UPDATE usuarios SET nombre=$1, email=$2,contraseña=$3 WHERE id_user=$4`
+const editUsuario = `UPDATE usuarios SET nombre=$1, email=$2, contraseña=$3 WHERE email=$4`
 
 const deleteUsuario = `DELETE FROM usuarios WHERE id_user=$1`
 

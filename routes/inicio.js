@@ -10,7 +10,7 @@ require('../middlewares/google-auth')
 routes.get('/', vistasBasicas.home_guess);
 routes.get('/login', vistasBasicas.log_in);
 routes.get('/signup', vistasBasicas.sign_up);
-routes.get('/profile', jsonwebtoken.authorization, vistasBasicas.profile);
+routes.get('/profile', jsonwebtoken.authorization, controllerFunctions.pintarUsuario);
 routes.get('/favorites', jsonwebtoken.authorization, vistasBasicas.favorites_user);
 routes.get('/logout', jsonwebtoken.logout);
 routes.get('/home_login', jsonwebtoken.authorization, vistasBasicas.home_login)
@@ -21,11 +21,14 @@ routes.get('/home_login', jsonwebtoken.authorization, vistasBasicas.home_login)
 // ----------- Rutas para las vistas del ADMIN --------------
 routes.get('/home_admin', jsonwebtoken.authorization, vistasBasicas.home_admin)
 routes.get('/users', vistasBasicas.users); // Vista del administrador con el listado de usuario registrados (admin)
-routes.get('/dashboard', vistasBasicas.dashboard); // Vista del administrador para crear y visualizar sus anuncios (admin)
+routes.get('/dashboard_admin', vistasBasicas.dashboard); // Vista del administrador para crear y visualizar sus anuncios (admin)
+// ----------- Rutas Post ADMIN --------------
 routes.post('/dashboard', controllerFunctions.crearOferta);
+
 // ----------- Rutas Post usuario --------------
 routes.post('/signup', controllerFunctions.createUser)
 routes.post('/login', controllerFunctions.login)
+routes.post('/profile', controllerFunctions.editarUsuario)
 
 // ----------- Rutas Api -----------------
 routes.get('/search', controllerFunctions.recogerOfertas); // Listado de resultados de la busqueda
@@ -44,5 +47,7 @@ routes.get('/google/callback', jsonwebtoken.authorization,
         }
         res.redirect('/home_login');
     });
+
+routes.get('/favorites', controllerFunctions.favoritos)
 
 module.exports = routes;

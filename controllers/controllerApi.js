@@ -4,6 +4,8 @@ const freelancer = require("../Utils/freelance_scrap");
 const peoplePerHourScrap = require("../Utils/peoplePerHour_scrap");
 const functionQuerys = require("../models/entryApi");
 const mongoose = require('../models/favoritos_model');
+const { insertFavorito } = require('../utils/querys');
+
 
 
 // ------------------------ SCRAPPING --------------------------- //
@@ -55,22 +57,79 @@ const login = async (req, res, next) => {
                 email: result.email,
                 role: result.administrador
             }
-            const token = jwt.sign({ user: consulta }, process.env.jwt_secret); //Crea el toquen con la informacion de la consulta
-            res.cookie("access_token", token, {
-                    httpOnly: true,
-                    // secure: process.env.NODE_ENV === "production"
-                    secure: false
-                })
-                .status(200).redirect('home_login');
+            console.log(consulta.role);
+            if (consulta.role == false) {
+                const token = jwt.sign({ user: consulta }, process.env.jwt_secret); //Crea el toquen con la informacion de la consulta
+                res.cookie("access_token", token, {
+                        httpOnly: true,
+                        // secure: process.env.NODE_ENV === "production"
+                        secure: false
+                    })
+                    .status(200).redirect('home_login');
+            }else {
+                const token = jwt.sign({ user: consulta }, process.env.jwt_secret); //Crea el toquen con la informacion de la consulta
+                res.cookie("access_token", token, {
+                        httpOnly: true,
+                        // secure: process.env.NODE_ENV === "production"
+                        secure: false
+                    })
+                    .status(200).redirect('home_admin'); 
+            }
             
         } else {
             console.log("Email o contraseña incorrecto");
             res.status(401).redirect('/login');
         }
     } catch (error) {
+        error = 'erroor'
+        res.status(400).json({"error":error});
+    }
+}
+
+const favoritos = async (req,res) => {
+    try {
+        const oferta = await req.body;
+        const nuevoFav = await functionQuerys.insertFavoritos(oferta);
+        if (nuevoFav){
+            res.sendStatus(200);
+        } else {
+            res.sendStatus(400);
+        }
+        
+    } catch (error) {
         error = 'me cago en todo'
         res.status(400).json({"error":error});
     }
+}
+
+
+
+const pintarUsuario = async (req, res) => {
+    try {
+        const token = req.cookies.access_token;
+        const data = await jwt.verify(token, process.env.jwt_secret);
+        const consulta = await functionQuerys.selectUsuario(data.user.email)
+        res.render('profile', {
+            nombre: consulta[0].nombre,
+            email: consulta[0].email,
+            password: consulta[0].contraseña
+        })
+    } catch (error) {
+        res.status(400).json({"error":"AQUI FALLO"});
+    }
+}
+
+const editarUsuario = async (req, res) => {
+    const token = req.cookies.access_token;
+    const data = await jwt.verify(token, process.env.jwt_secret);
+    let busqueda = {
+        nombre: req.body.name,
+        email: req.body.email,
+        contraseña: req.body.password,
+        old: data.user.email
+    }
+    const editar = await functionQuerys.editUsuario(busqueda)
+    res.clearCookie("access_token").status(200).redirect('login')  
 }
 
 
@@ -99,7 +158,10 @@ const controllerFunctions = {
     createUser,
     login,
     recogerOfertas,
-    crearOferta
+    crearOferta,
+    pintarUsuario,
+    editarUsuario,
+    favoritos
 }
 
 module.exports = controllerFunctions;
