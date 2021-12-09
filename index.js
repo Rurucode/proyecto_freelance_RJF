@@ -6,6 +6,7 @@ const rutasInicio = require('./routes/inicio')
 const cookieParser = require("cookie-parser"); //Para las cookies
 require('./middlewares/google-auth')
 const passport = require('passport')
+const helmet = require("helmet"); // Seguridad
 
 /****************** Enable Express ******************/
 const app = express()
@@ -20,6 +21,7 @@ app.use(express.json()); //Para habilitar envio de JSON al servidor
 app.use(express.static('public')); //Habilitar los archivos para que sean estaticos
 app.use(express.urlencoded({ extended: false })); //Para solucionar el undefined en el form.
 app.use(cookieParser()); // Para las cookies
+app.use(helmet()); // Seguridad.
 /****************** Enable Pug ******************/
 app.set('view engine', 'pug');
 app.set('views','./views');

@@ -102,11 +102,10 @@ ul {
     text-align: center;
 }
 
-.legendStyle{
-    font-family: 'outfit';
+.information{
+    margin-bottom: 0;
     text-align: left;
-    padding: 0 8px;
-    color:#1B1C1E;
+    font-family: 'outfit';
 }
 
 #divButtons{

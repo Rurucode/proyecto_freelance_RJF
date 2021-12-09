@@ -28,17 +28,17 @@ body#body
                a(href='./logout') Salir
 
    div#containUserProfile
-      form#yourProfile
+      form#yourProfile(action="/profile" method="post")
          h3 Edita y guarda los cambios de tu perfil
-         fieldset#name.fieldsetOptions(type="text", name="name" placeholder="Nombre de usuario")
-            legend.legendStyle Nombre de usuario
-         fieldset#email.fieldsetOptions(type="email", name="email" placeholder="Correo electrónico")
-            legend.legendStyle Correo electrónico
-         fieldset#password.fieldsetOptions(type="password", name="password" placeholder="Password")
-            legend.legendStyle Password
+         p.information Nombre de usuario:
+         input#name.fieldsetOptions(type="text", name="name" placeholder=nombre)
+         p.information Correo electrónico:
+         input#email.fieldsetOptions(type="email", name="email" placeholder=email)
+         p.information Contraseña:
+         input#password.fieldsetOptions(type="password", name="password" placeholder=password)
          div#divButtons
             button#cancelButton.profileButtons Cancelar
-            button#saveButton.profileButtons Guardar
+            input#saveButton.profileButtons(type="submit", value="Guardar") 
       
       div#divIllustration
          img#userImage(src='../assets/images/profile_user_illustration.png' alt='userImg')

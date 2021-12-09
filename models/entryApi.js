@@ -18,11 +18,11 @@ const allUsuarios = async () => {
     return result
 }
 
-const selectUsuario = async (id_user) => {
+const selectUsuario = async (email) => {
     let client, result;
     try {
         client = await pool.connect(); // Espera a abrir conexion
-        const data = await client.query(querys.selectUsuario, [id_user])
+        const data = await client.query(querys.selectUsuario, [email])
         result = data.rows
     } catch (err) {
         console.log(err);
@@ -83,10 +83,10 @@ const busquedaUserFavoritos = async (id_user) => {
 
 const editUsuario = async (entry) => {
     let client, result;
-    const { nombre, email, contraseña, id_user } = entry;
+    const { nombre, email, contraseña, old } = entry;
     try {
         client = await pool.connect(); // Espera a abrir conexion
-        const data = await client.query(querys.editUsuario, [nombre, email, contraseña, id_user])
+        const data = await client.query(querys.editUsuario, [nombre, email, contraseña, old])
         result = data.rows
     } catch (err) {
         console.log(err);
@@ -144,6 +144,11 @@ const login = async (email, password) => {
     return result
 }
 
+
+let insertar = {nombre: '99', email: '99@gmail.com', contraseña: '99', old: '1111@gmail.com'}
+editUsuario(insertar)
+.then(data=>console.log(data))
+
 // login('Marylo@gmail.com', '123456')
 // .then(data=>(console.log(data)))
 
@@ -168,9 +173,6 @@ const login = async (email, password) => {
 // busquedaUserFavoritos('2')
 // .then(data=>console.log(data))
 
-// let insertar = {nombre: 'carlos', email: 'estoyEDITADO@gmail.com', contraseña: 'editado', id_user: '1'}
-// editUsuario(insertar)
-// .then(data=>console.log(data))
 
 // deleteUsuario('4')
 //     .then(data => console.log(data))
