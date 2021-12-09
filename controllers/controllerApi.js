@@ -120,6 +120,21 @@ const pintarUsuario = async (req, res) => {
     }
 }
 
+const pintarUsuarioAdmin = async (req, res) => {
+    try {
+        const token = req.cookies.access_token;
+        const data = await jwt.verify(token, process.env.jwt_secret);
+        const consulta = await functionQuerys.selectUsuario(data.user.email)
+        res.render('profile_admin', {
+            nombre: consulta[0].nombre,
+            email: consulta[0].email,
+            password: consulta[0].contraseña
+        })
+    } catch (error) {
+        res.status(400).json({"error":"AQUI FALLO"});
+    }
+}
+
 // Funcion para editar los datos del usuario en la BBDD.
 const editarUsuario = async (req, res) => {
     const token = req.cookies.access_token;
@@ -163,7 +178,8 @@ const controllerFunctions = {
     crearOferta,
     pintarUsuario,
     editarUsuario,
-    favoritos
+    favoritos,
+    pintarUsuarioAdmin
 }
 
 module.exports = controllerFunctions;

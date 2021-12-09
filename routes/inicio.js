@@ -22,7 +22,7 @@ routes.get('/home_login', jsonwebtoken.authorization, vistasBasicas.home_login)
 routes.get('/home_admin', jsonwebtoken.authorization, vistasBasicas.home_admin)
 routes.get('/users', vistasBasicas.users); // Vista del administrador con el listado de usuario registrados (admin)
 routes.get('/dashboard_admin', vistasBasicas.dashboard); // Vista del administrador para crear y visualizar sus anuncios (admin)
-routes.get('/profile_admin', jsonwebtoken.authorization, controllerFunctions.pintarUsuario); // Vista del perfil del administrador
+routes.get('/profile_admin', jsonwebtoken.authorization, controllerFunctions.pintarUsuarioAdmin); // Vista del perfil del administrador
 // ----------- Rutas Post ADMIN --------------
 routes.post('/dashboard', controllerFunctions.crearOferta);
 
