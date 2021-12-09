@@ -40,4 +40,3 @@ const jsonwebtoken = {
 
 
 module.exports = jsonwebtoken;
-
