@@ -24,3 +24,4 @@ buscador.addEventListener('click', async() => {
     // Hacemos que aparezca el gif
     document.getElementById("loadingOffers").style.display="none";
 });
+
