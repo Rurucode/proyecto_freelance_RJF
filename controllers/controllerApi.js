@@ -4,6 +4,7 @@ const freelancer = require("../Utils/freelance_scrap");
 const peoplePerHourScrap = require("../Utils/peoplePerHour_scrap");
 const functionQuerys = require("../models/entryApi");
 const mongoose = require('../models/favoritos_model');
+const { insertFavorito } = require('../utils/querys');
 
 
 
@@ -85,6 +86,22 @@ const login = async (req, res, next) => {
     }
 }
 
+const favoritos = async (req,res) => {
+    try {
+        const oferta = await req.body;
+        const nuevoFav = await functionQuerys.insertFavoritos(oferta);
+        if (nuevoFav){
+            res.sendStatus(200);
+        } else {
+            res.sendStatus(400);
+        }
+        
+    } catch (error) {
+        error = 'me cago en todo'
+        res.status(400).json({"error":error});
+    }
+}
+
 
 
 const pintarUsuario = async (req, res) => {
@@ -143,7 +160,8 @@ const controllerFunctions = {
     recogerOfertas,
     crearOferta,
     pintarUsuario,
-    editarUsuario
+    editarUsuario,
+    favoritos
 }
 
 module.exports = controllerFunctions;

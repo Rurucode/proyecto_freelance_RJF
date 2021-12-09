@@ -23,4 +23,5 @@ buscador.addEventListener('click', async() => {
     data.map(oferta => pintar(oferta));
     // Hacemos que aparezca el gif
     document.getElementById("loadingOffers").style.display="none";
+
 });

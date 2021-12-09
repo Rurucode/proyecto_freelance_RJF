@@ -48,4 +48,6 @@ routes.get('/google/callback', jsonwebtoken.authorization,
         res.redirect('/home_login');
     });
 
+routes.get('/favorites', controllerFunctions.favoritos)
+
 module.exports = routes;
