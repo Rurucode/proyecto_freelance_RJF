@@ -2,6 +2,8 @@ const vistasBasicas = require('../controllers/inicio');
 const routes = require('express').Router();
 const controllerFunctions = require('../controllers/controllerApi');
 const jsonwebtoken = require('../controllers/jwt')
+const passport = require('passport');
+require('../middlewares/google-auth')
 
 // -------- Rutas para la vistas básicas del CLIENTE -----------
 
@@ -27,5 +29,22 @@ routes.post('/login', controllerFunctions.login)
 
 // ----------- Rutas Api -----------------
 routes.get('/search', controllerFunctions.recogerOfertas); // Listado de resultados de la busqueda
+routes.get('/google',
+    passport.authenticate('google', {
+        scope: ['profile', 'email']
+    }))
+
+routes.get('/google/callback', jsonwebtoken.authorization,
+    passport.authenticate('google', {
+        failureRedirect: '/login'
+    }),
+    function (req, res) {
+        if (req.user.user_id) {
+            generateToken(res, req.user.user_id, req.user.email)
+        }
+        res.redirect('/home_login');
+    });
+
+routes.get('/favorites', controllerFunctions.favoritos)
 
 module.exports = routes;
