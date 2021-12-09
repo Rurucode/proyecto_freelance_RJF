@@ -10,8 +10,6 @@ head
    script(src='https://kit.fontawesome.com/f408539d77.js' crossorigin='anonymous')
 
 body#body
-   div#gif
-      img#loadingId(src='../assets/images/gifCodeJobs.gif' alt='imgGif')
 
    header#header
       a(href='./')
@@ -21,37 +19,40 @@ body#body
             li
                a(href='./') Inicio
             li
-               a(href='./profile')#profileColor Tu cuenta
+               a(href='./profile_admin')#profileColor Tu cuenta
             li
                a(href='./favorites') Favoritos
             li
                a(href='./logout') Salir
 
    div#containUserProfile
-      form#yourProfile
+      form#yourProfile(action="/profile" method="post")
          h3 Edita y guarda los cambios de tu perfil
-         input#name.inputOptions(type="text", name="name" placeholder="Nombre de usuario")
-         input#email.inputOptions(type="email", name="email" placeholder="Correo electrónico")
-         input#password.inputOptions(type="password", name="password" placeholder="Password")
+         p.information Nombre de administrador:
+         input#name.fieldsetOptions(type="text", name="name" placeholder=nombre)
+         p.information Correo electrónico:
+         input#email.fieldsetOptions(type="email", name="email" placeholder=email)
+         p.information Contraseña:
+         input#password.fieldsetOptions(type="password", name="password" placeholder=password)
          div#divButtons
             button#cancelButton.profileButtons Cancelar
-            button#saveButton.profileButtons Guardar
+            input#saveButton.profileButtons(type="submit", value="Guardar")
       
       div#divIllustration
          img#adminImage(src='../assets/images/admin_illustration.gif' alt='userImg')
  
    footer#footer.footerMenu
       nav#footerMenu.menuInferior
-         ul#menuMovil.menuResponsive
+        ul#menuMovil.menuResponsive
             li
                a(href='./')
-                  <i class="fas fa-home" id="iconHome"></i>
+                  img#iconHome(src='../assets/images/home.png' alt="home")
             li
                a(href='./profile')
-                  <i class="fas fa-user" id="iconUser"></i>
+                  img#iconUser(src='../assets/images/profile.png' alt="profile")
             li
                a(href='./favorites')
-                  <i class="fas fa-heart" id="iconFavorites"></i>
+                  img#iconFavorites(src='../assets/images/favorite.png' alt="favorite")
             li
                a(href='./logout')
-                  <i class="fas fa-sign-out-alt" id="iconLogOut"></i>
+                  img#iconLogOut(src='../assets/images/logout.png' alt="logout")
