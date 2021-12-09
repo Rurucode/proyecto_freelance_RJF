@@ -67,7 +67,7 @@ ul {
 
 #containUserProfile{
     display:flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
 }
