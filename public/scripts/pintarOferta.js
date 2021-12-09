@@ -25,3 +25,26 @@ buscador.addEventListener('click', async() => {
     document.getElementById("loadingOffers").style.display="none";
 });
 
+// FULL STACK SCRAP
+
+ const fullStack = document.getElementById('fullStack');
+
+    fullStack.addEventListener('click', async() => {
+
+        document.getElementById("loadingOffers").style.display="flex";
+
+        if (document.querySelector('#contenedorCarta')) {
+            mainCarta.removeChild(document.querySelector('#contenedorCarta'));
+        }
+
+        let response = [];
+        let resultado = "full stack";
+        response = await fetch(`/search?name=${resultado}`);
+        let data = [];
+        data = await response.json();
+        data.map(oferta => pintar(oferta));
+
+        document.getElementById("loadingOffers").style.display="none";
+    
+    });
+
