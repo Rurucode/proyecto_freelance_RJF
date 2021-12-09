@@ -7,7 +7,7 @@ const scrapFreelancer = async(url) => {
     try {
         console.log('Opening browser');
         //Creamos la constante browser donde le entra el chronium lanzado
-        const browser = await puppeteer.launch({headless: false});
+        const browser = await puppeteer.launch({headless: true});
 
         //Nueva pagina y con goto navegamos hacia ella
         const page = await browser.newPage();
@@ -15,7 +15,11 @@ const scrapFreelancer = async(url) => {
         console.log(`Navegating to ${url}`);
 
         //Esperamos a que en la pagina aparezca el selector que va entre parentesis y una vez que lo encuentre comienza el resto
+        await page.click('#close-cookie-banner');
+        await page.waitForSelector('#search-form');
+        await page.click('#search-submit');
         await page.waitForSelector('.ProjectSearch-content');
+        // await page.waitFor(60000);
 
         //Creamos una funcion que lo primero que hace es evaluar el contenido de dicho selector y no le entra ningun parametro
         const trabajos = await page.$$eval('.ProjectSearch-content', () => {
