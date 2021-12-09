@@ -9,10 +9,9 @@ html
       link(rel='stylesheet' href='../styles/normalize.css')
       link(rel='shortcut icon' href='../assets/images/favicon.png' type='image/x-icon')
       script(src='https://kit.fontawesome.com/f408539d77.js' crossorigin='anonymous')
+
    body#body
-      div#gif
-         img#loadingId(src='../assets/images/gifCodeJobs.gif' alt='imgGif')
-      
+
       header#header
          a(href='./home_admin')
           img#logotipo.logotipoSuperior(src='../assets/images/logotipo_final_black.png' alt='logotipoHome')
@@ -36,23 +35,22 @@ html
          label(for="url") Enlace:
          input(type="text" name="url"  placeholder="https://example.com" id="input_url") 
          button(id="botonCreador") Crear
-
-               
+         
    footer#footer.footerMenu
       nav#footerMenu.menuInferior
-         ul#menuMovil.menuResponsive
+        ul#menuMovil.menuResponsive
             li
                a(href='./')
-                  <i class="fas fa-home" id="iconHome"></i>
+                  img#iconHome(src='../assets/images/home.png' alt="home")
             li
                a(href='./profile')
-                  <i class="fas fa-user" id="iconUser"></i>
+                  img#iconUser(src='../assets/images/profile.png' alt="profile")
             li
                a(href='./favorites')
-                  <i class="fas fa-heart" id="iconFavorites"></i>
+                  img#iconFavorites(src='../assets/images/favorite.png' alt="favorite")
             li
                a(href='./logout')
-                  <i class="fas fa-sign-out-alt" id="iconLogOut"></i>
+                  img#iconLogOut(src='../assets/images/logout.png' alt="logout")
 
 
 
