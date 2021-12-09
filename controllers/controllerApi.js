@@ -3,6 +3,7 @@ const jwt = require('jsonwebtoken')
 const freelancer = require("../Utils/freelance_scrap");
 const peoplePerHourScrap = require("../Utils/peoplePerHour_scrap");
 const functionQuerys = require("../models/entryApi");
+const mongoose = require('../models/favoritos_model');
 
 
 // ------------------------ SCRAPPING --------------------------- //
@@ -72,7 +73,24 @@ const login = async (req, res, next) => {
     }
 }
 
+
+
+
 // ------------------------ FUNCIONES DE LA API (ADMIN) --------------------------- //
+
+// Función guardar en mongo una oferta creada por el admin
+const crearOferta = async (req, res) => {
+    let oferta = {
+            "title": req.body.titulo,
+            "price": req.body.precio,
+            "description":req.body.descripcion, 
+            "url": req.body.url
+        };
+        let nuevaOferta = new mongoose (oferta);
+    
+    nuevaOferta.save()
+    res.redirect('/home_admin');
+}
 
 
 
@@ -80,7 +98,8 @@ const login = async (req, res, next) => {
 const controllerFunctions = {
     createUser,
     login,
-    recogerOfertas
+    recogerOfertas,
+    crearOferta
 }
 
 module.exports = controllerFunctions;
