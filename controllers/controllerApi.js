@@ -86,6 +86,7 @@ const login = async (req, res, next) => {
     }
 }
 
+
 const favoritos = async (req,res) => {
     try {
         const oferta = await req.body;
@@ -97,13 +98,13 @@ const favoritos = async (req,res) => {
         }
         
     } catch (error) {
-        error = 'me cago en todo'
+        error = 'error'
         res.status(400).json({"error":error});
     }
 }
 
 
-
+// Funcion para mostrar al usuario sus datos de perfil.
 const pintarUsuario = async (req, res) => {
     try {
         const token = req.cookies.access_token;
@@ -119,6 +120,7 @@ const pintarUsuario = async (req, res) => {
     }
 }
 
+// Funcion para editar los datos del usuario en la BBDD.
 const editarUsuario = async (req, res) => {
     const token = req.cookies.access_token;
     const data = await jwt.verify(token, process.env.jwt_secret);
