@@ -4,45 +4,34 @@ head
    meta(http-equiv='X-UA-Compatible' content='IE=edge')
    meta(name='viewport' content='width=device-width, initial-scale=1.0')
    title COD3 (JOBS)
-   link(rel='stylesheet' href='../styles/profile.css')
+   link(rel='stylesheet' href='../styles/home.css')
    link(rel='stylesheet' href='../styles/normalize.css')
    link(rel='shortcut icon' href='../assets/images/favicon.png' type='image/x-icon')
    script(src='https://kit.fontawesome.com/f408539d77.js' crossorigin='anonymous')
 
-body#body
+body#idBody
    div#gif
       img#loadingId(src='../assets/images/gifCodeJobs.gif' alt='imgGif')
 
    header#header
-      a(href='./')
-         img#logotipo.logotipoSuperior(src='../assets/images/logotipo_final_black.png' alt='logotipoHome')
+      a(href='./home_admin')
+       img#logotipo.logotipoSuperior(src='../assets/images/logotipo_final_black.png' alt='logotipoHome')
       nav#headerMenu.menuPrincipal
          ul#pcMenu.menuPc
             li
-               a(href='./home_login') Inicio
+               a(href='./dashboard_admin') Crear o eliminar
             li
-               a(href='./profile')#profileColor Tu cuenta
+               a(href='./profile_admin') Tu cuenta
             li
-               a(href='./favorites') Favoritos
-            li
-               a(href='./logout') Salir
+               a(href='./logout') Salir   
 
-   div#containUserProfile
-      form#yourProfile
-         h3 Edita y guarda los cambios de tu perfil
-         input#name.inputOptions(type="text", name="name" placeholder="Nombre de usuario")
-         input#email.inputOptions(type="email", name="email" placeholder="Correo electrónico")
-         input#password.inputOptions(type="password", name="password" placeholder="Password")
-         div#divButtons
-            button#cancelButton.profileButtons Cancelar
-            button#saveButton.profileButtons Guardar
-      
-      div#divIllustration
-         img#userImage(src='../assets/images/profile_user_illustration.png' alt='userImg')
- 
-   footer#footer.footerMenu
+   div#searchDiv.searcherDiv
+      input.whatSearch(type='text', name='name', placeholder='Busca ofertas de...',  id="buscadorOferta")  
+      button.iconLupa(class="fas fa-search", id="botonBuscador")
+
+    footer#footer.footerMenu
       nav#footerMenu.menuInferior
-         ul#menuMovil.menuResponsive
+        ul#menuMovil.menuResponsive
             li
                a(href='./')
                   <i class="fas fa-home" id="iconHome"></i>

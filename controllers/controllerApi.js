@@ -3,6 +3,7 @@ const jwt = require('jsonwebtoken')
 const freelancer = require("../Utils/freelance_scrap");
 const peoplePerHourScrap = require("../Utils/peoplePerHour_scrap");
 const functionQuerys = require("../models/entryApi");
+const mongoose = require('../models/favoritos_model');
 
 
 // ------------------------ SCRAPPING --------------------------- //
@@ -13,12 +14,12 @@ const recogerOfertas = async (req, res) => {
         // Intentamos acceder al scrap de cada uno y traernos los datos
         if(req.query.name){
             let PEOPLE = await peoplePerHourScrap.scrapPeoplePerHour(`https://www.peopleperhour.com/services/${req.query.name}?ref=search`);
-            //let FREELANCER = await freelancer.scrapFreelancer(`https://www.freelancer.es/jobs/?keyword=${req.query.name}`);
+            let FREELANCER = await freelancer.scrapFreelancer(`https://www.freelancer.es/jobs/?keyword=${req.query.name}`);
 
             // Concatenamos los dos arrays con la información de los scrap, devolvemos un 200 en caso correcto
-            //let datosOferta = PEOPLE.concat(FREELANCER);
+            let datosOferta = PEOPLE.concat(FREELANCER);
             // console.log(datosOferta.length);
-            res.status(200).json(PEOPLE);
+            res.status(200).json(datosOferta);
         }
 
     } catch (error) {
@@ -72,7 +73,24 @@ const login = async (req, res, next) => {
     }
 }
 
+
+
+
 // ------------------------ FUNCIONES DE LA API (ADMIN) --------------------------- //
+
+// Función guardar en mongo una oferta creada por el admin
+const crearOferta = async (req, res) => {
+    let oferta = {
+            "title": req.body.titulo,
+            "price": req.body.precio,
+            "description":req.body.descripcion, 
+            "url": req.body.url
+        };
+        let nuevaOferta = new mongoose (oferta);
+    
+    nuevaOferta.save()
+    res.redirect('/home_admin');
+}
 
 
 
@@ -80,7 +98,8 @@ const login = async (req, res, next) => {
 const controllerFunctions = {
     createUser,
     login,
-    recogerOfertas
+    recogerOfertas,
+    crearOferta
 }
 
 module.exports = controllerFunctions;

@@ -38,9 +38,13 @@ const users = (req,res) => {
 }
 
 // //Pinta el crear y visualizar de los anuncios
-// const dashboard = (req,res) => {
-//     res.render('dashboard');
-// }
+const dashboard = (req,res) => {
+    res.render('dashboard_admin');
+}
+
+const home_admin = (req,res) => {
+    res.render('home_admin');
+}
 
 
 const vistasBasicas = {
@@ -51,7 +55,8 @@ const vistasBasicas = {
     profile,
     favorites_user,
     users,
-    
+    dashboard,
+    home_admin
 };
 
 module.exports = vistasBasicas;
