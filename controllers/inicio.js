@@ -1,18 +1,23 @@
 // --------------------- Renderizado de vistas básicas de CLIENTE -------------------
 
 //Pinta el home
-const inicio = (req,res) => {
+const home_guess = (req,res) => {
     res.render('home_guess');
 }
 
 //Pinta el formulario de loggeo
-const login = (req,res) => {
+const log_in = (req,res) => {
     res.render('log_in');
 }
 
+//Pinta la home para usuarios logeados.
+const home_login = (req,res) => {
+    res.render('home_login');
+}
+
 //Pinta el formulario de registro
-const signin = (req,res) => {
-    res.render('sign_in');
+const sign_up = (req,res) => {
+    res.render('sign_up');
 }
 
 //Pinta la parte de perfil una vez iniciada la sesión
@@ -21,8 +26,8 @@ const profile = (req,res) => {
 }
 
 //Pinta la sección de favoritos una vez iniciada la sesión
-const favorites = (req,res) => {
-    res.render('favorites');
+const favorites_user = (req,res) => {
+    res.render('favorites_user');
 }
 
 // ---------- Renderizado de vistas de ADMIN una vez iniciado sesión --------
@@ -32,20 +37,26 @@ const users = (req,res) => {
     res.render('users');
 }
 
-//Pinta el crear y visualizar de los anuncios
+// //Pinta el crear y visualizar de los anuncios
 const dashboard = (req,res) => {
-    res.render('dashboard');
+    res.render('dashboard_admin');
+}
+
+const home_admin = (req,res) => {
+    res.render('home_admin');
 }
 
 
 const vistasBasicas = {
-    inicio,
-    login,
-    signin,
+    home_guess,
+    log_in,
+    home_login,
+    sign_up,
     profile,
-    favorites,
+    favorites_user,
     users,
-    dashboard
+    dashboard,
+    home_admin
 };
 
 module.exports = vistasBasicas;

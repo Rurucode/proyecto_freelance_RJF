@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require('../Utils/conexion_mongo')
 // Esquema de como seria el contenido de favoritos
 const favoriteSchema = {
     title: { 

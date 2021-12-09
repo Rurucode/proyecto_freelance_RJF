@@ -7,18 +7,23 @@ head
    link(rel='stylesheet' href='../styles/formulario.css')
    link(rel='stylesheet' href='../styles/normalize.css')
    link(rel='shortcut icon' href='../assets/images/favicon.png' type='image/x-icon')
+
 body#body.formBody
    header#headerImg.headerImg
       a(href='./')
          img.logotipoForm(src='../assets/images/logotipo_final_white.png', alt="logotipo")
+
    section#sectionLinks.sectionLinks
       a#enlaceFacebook.enlaces(href="https://es-es.facebook.com/") CONTINUAR CON FACEBOOK
       a#enlaceGoogle.enlaces(href="https://www.google.com/intl/es/gmail/about/") CONTINUAR CON GMAIL
       p.sectionP o
-   form#bodyForm.bodyForm
-      input(type="text", name="userName" placeholder="Nombre de usuario")
-      input(type="email", name="userEmail" placeholder="Correo electrónico")
-      input(type="password", name="userPassword" placeholder="Contraseña")
+
+
+   form#bodyForm.bodyForm(action="/signup" method="post")
+      input#name(type="text", name="name" placeholder="Nombre de usuario")
+      input#email(type="email", name="email" placeholder="Correo electrónico")
+      input#password(type="password", name="password" placeholder="Contraseña")
       input.sendForm(type="submit", value="Registrarse")
+      
    footer#footerLink.footerLink
       a.link(href="./login") ¿Ya tienes cuenta en COD3 (JOBS)?

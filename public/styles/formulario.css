@@ -21,7 +21,8 @@
 /****************** LOGOTIPO ******************/
 
 .logotipoForm{
-    margin: 16px;
+    width: 408px;
+    margin-bottom: 24px;
 }
 
 /****************** SECTION ******************/
@@ -34,15 +35,20 @@
 #enlaceFacebook{
     background-color: #3B5998;
     color: #F7F8F9;
+    width: 280px;
+    margin-bottom: 24px;
+    justify-content: center;
 }
 
 #enlaceGoogle{
     background-color: #F7F8F9;
     color: #1B1C1E;
+    width: 280px;
+    margin-bottom: 24px;
+    justify-content: center;
 }
 
 .enlaces{
-    margin: 16px;
     font-family: 'outfit';
     padding: 16px 72px;
     border-radius: 50px;
@@ -53,7 +59,7 @@
 .sendForm{
     border: 0;
     cursor: pointer;
-    padding: 16px 72px;
+    padding: 16px;
     border-radius: 50px;
     background-color: #F74371;
     color: #F7F8F9;
@@ -62,10 +68,10 @@
 .sectionP{
     color: #F7F8F9;
     font-family: 'outfit';
-    margin: 16px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin-bottom: 24px;
 }
 
 /****************** FORM ******************/
@@ -74,21 +80,24 @@
     color: #F7F8F9;
     font-family: 'outfit';
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
 form input{
-    margin: 16px;
-    padding: 16px 72px;
+    padding: 16px 2px;
+    width: 400px;
+    margin-bottom: 24px;
+    text-align: center;
 }
 
 /****************** FOOTER ******************/
 
 .footerLink{
-    margin: 16px;
+    width: 400px;
+    margin-bottom: 24px;
 }
 
 .link{
@@ -96,6 +105,6 @@ form input{
     color: #F7F8F9;
     font-family: 'outfit';
     font-weight: bold;
-    font-size: 3vh;
+    font-size: 25px;
     justify-content: center;
 }
