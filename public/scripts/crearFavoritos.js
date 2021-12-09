@@ -1,1 +1,0 @@
-const fav = getElementById("contenedorOfertas")
