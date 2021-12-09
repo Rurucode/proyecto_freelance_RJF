@@ -6,6 +6,7 @@ const functionQuerys = require("../models/entryApi");
 const mongoose = require('../models/favoritos_model');
 
 
+
 // ------------------------ SCRAPPING --------------------------- //
 
 // Creamos una función para obtener los datos del scrap
@@ -79,9 +80,39 @@ const login = async (req, res, next) => {
             res.status(401).redirect('/login');
         }
     } catch (error) {
-        error = 'me cago en todo'
+        error = 'erroor'
         res.status(400).json({"error":error});
     }
+}
+
+
+
+const pintarUsuario = async (req, res) => {
+    try {
+        const token = req.cookies.access_token;
+        const data = await jwt.verify(token, process.env.jwt_secret);
+        const consulta = await functionQuerys.selectUsuario(data.user.email)
+        res.render('profile', {
+            nombre: consulta[0].nombre,
+            email: consulta[0].email,
+            password: consulta[0].contraseña
+        })
+    } catch (error) {
+        res.status(400).json({"error":"AQUI FALLO"});
+    }
+}
+
+const editarUsuario = async (req, res) => {
+    const token = req.cookies.access_token;
+    const data = await jwt.verify(token, process.env.jwt_secret);
+    let busqueda = {
+        nombre: req.body.name,
+        email: req.body.email,
+        contraseña: req.body.password,
+        old: data.user.email
+    }
+    const editar = await functionQuerys.editUsuario(busqueda)
+    res.clearCookie("access_token").status(200).redirect('login')  
 }
 
 
@@ -110,7 +141,9 @@ const controllerFunctions = {
     createUser,
     login,
     recogerOfertas,
-    crearOferta
+    crearOferta,
+    pintarUsuario,
+    editarUsuario
 }
 
 module.exports = controllerFunctions;
