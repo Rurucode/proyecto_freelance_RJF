@@ -103,6 +103,11 @@ ul {
     margin-left: -50px;
 }
 
+#botonBuscador{
+    cursor: pointer;
+    z-index: 1;
+}
+
 /****************** SECTION MENU PROFESIONES ******************/
 
 .menuIntermedio{
@@ -150,6 +155,20 @@ ul {
     z-index: -1;
 }
 
+/****************** GIF ******************/
+
+#loadingOffers{
+    position: absolute;
+    background: #1B1C1E url("../assets/images/gifCodeJobs.gif") no-repeat center;
+    background-size: 400px;
+    top:0px;
+    right:0px;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    display: none;
+}
+
 /****************** SECTION PUBLICACIONES TRABAJO ******************/
 
 #contenedorCarta{
@@ -168,7 +187,7 @@ ul {
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
-    background-color: #ebebeb;
+    background-color: #f3f3f3;
     padding: 16px;
     width: 300px;
     height: auto;
