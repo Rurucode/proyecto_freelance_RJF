@@ -55,13 +55,24 @@ const login = async (req, res, next) => {
                 email: result.email,
                 role: result.administrador
             }
-            const token = jwt.sign({ user: consulta }, process.env.jwt_secret); //Crea el toquen con la informacion de la consulta
-            res.cookie("access_token", token, {
-                    httpOnly: true,
-                    // secure: process.env.NODE_ENV === "production"
-                    secure: false
-                })
-                .status(200).redirect('home_login');
+            console.log(consulta.role);
+            if (consulta.role == false) {
+                const token = jwt.sign({ user: consulta }, process.env.jwt_secret); //Crea el toquen con la informacion de la consulta
+                res.cookie("access_token", token, {
+                        httpOnly: true,
+                        // secure: process.env.NODE_ENV === "production"
+                        secure: false
+                    })
+                    .status(200).redirect('home_login');
+            }else {
+                const token = jwt.sign({ user: consulta }, process.env.jwt_secret); //Crea el toquen con la informacion de la consulta
+                res.cookie("access_token", token, {
+                        httpOnly: true,
+                        // secure: process.env.NODE_ENV === "production"
+                        secure: false
+                    })
+                    .status(200).redirect('home_admin'); 
+            }
             
         } else {
             console.log("Email o contraseña incorrecto");
