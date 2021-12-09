@@ -86,7 +86,11 @@ ul {
 
 #yourProfile h3{
     font-family: 'outfit';
-    font-size: 24px;
+    font-size: 26px;
+    font-weight: bold;
+    width: 300px;
+    text-align: center;
+    margin: 12px;
 }
 
 .inputOptions{
@@ -148,7 +152,7 @@ ul {
 }
 
 #userImage{
-    width: 600px;
+    width: 500px;
 }
 
 /****************** FOOTER ******************/
