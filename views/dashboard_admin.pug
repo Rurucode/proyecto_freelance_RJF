@@ -5,7 +5,7 @@ html
       meta(http-equiv='X-UA-Compatible' content='IE=edge')
       meta(name='viewport' content='width=device-width, initial-scale=1.0')
       title COD3 (JOBS)
-      link(rel='stylesheet' href='../styles/favorites.css')
+      link(rel='stylesheet' href='../styles/dashboard_admin.css')
       link(rel='stylesheet' href='../styles/normalize.css')
       link(rel='shortcut icon' href='../assets/images/favicon.png' type='image/x-icon')
       script(src='https://kit.fontawesome.com/f408539d77.js' crossorigin='anonymous')
@@ -21,20 +21,31 @@ html
                li
                   a(href='./profile_admin') Tu cuenta
                li
+<<<<<<< HEAD
                   a(href='./dashboard_admin')#favoritesColor Crear o eliminar
+=======
+                  a(href='./dashboard')#dashboardColor Crear o eliminar
+>>>>>>> 3ad76066b0270ad8f98408008322bd2646803974
                li
                 a(href='./logout') Salir
 
-      form(action="/dashboard" method="post")
-         label(for="titulo") Título:
-         input(type="text" name="titulo" placeholder="Aplicación web" id="input_titulo")
-         label(for="precio") Precio:
-         input(type="number" name="precio" placeholder="Crear pagina web con node.js, express..." id="input_precio")  
-         label(for="descripcion") Descripción:
-         input(type="text" name="descripcion" placeholder="Crear pagina web con node.js, express..." id="input_descripcion")  
-         label(for="url") Enlace:
-         input(type="text" name="url"  placeholder="https://example.com" id="input_url") 
-         button(id="botonCreador") Crear
+   div#containAdminDashboard
+      form#yourDashboard(action="/dashboard" method="post")
+         h3 Crea y elimina los anuncios que desees
+         label.information(for="titulo") Título:
+         input.inputOptions(type="text" name="titulo" placeholder="Aplicación web" id="input_titulo")
+         label.information(for="precio") Precio:
+         input.inputOptions(type="number" name="precio" placeholder="Crear pagina web con node.js, express..." id="input_precio")  
+         label.information(for="descripcion") Descripción:
+         input.inputOptions(type="text" name="descripcion" placeholder="Crear pagina web con node.js, express..." id="input_descripcion")  
+         label.information(for="url") Enlace:
+         input.inputOptions(type="text" name="url"  placeholder="https://example.com" id="input_url") 
+         div#divButtons
+            button#deleteButton.adminButtons Eliminar
+            button.adminButtons(id="botonCreador") Crear
+            
+      div#divIllustration
+         img#adminImage(src='../assets/images/admin_illustration.png' alt='adminImg')
          
    footer#footer.footerMenu
       nav#footerMenu.menuInferior
