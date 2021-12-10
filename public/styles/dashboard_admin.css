@@ -2,6 +2,7 @@
     font-family: 'outfit';
     src: url('../assets/fonts/Outfit-VariableFont_wght.ttf');
 }
+
 /****************** BODY ******************/
 #body{
     width: 100%;
@@ -11,18 +12,7 @@
     padding: 0;
     background-color: #F7F8F9;
 }
-/****************** LOADING GIF ******************/
-#gif{
-    background-color: #1B1C1E;
-    min-height: 100vh;
-    padding: 0;
-    display: none; /* Cambiar a flex para verlo */
-    justify-content: center;
-    align-items: center;
-}
-#loadingId{
-    max-width: 50vw;
-}
+
 /****************** HEADER ******************/
 
 #header{
@@ -32,47 +22,53 @@
     align-items: center;
     justify-content: space-between
 }
+
 .logotipoSuperior{
     width: 450px;
 }
+
 .menuPrincipal{
     font-family: 'outfit';
     font-size: 30px;
     justify-content: right;
 }
+
 .menuPrincipal a{
     clear: right;
     margin: 3vh;
     text-decoration: none;
     color: #1B1C1E;
 }
-#profileColor{
+#dashboardColor{
     color: #29C4F8;
     font-weight: bold;
 }
+
 .menuPrincipal a:hover{
     font-weight: bold;
 }
+
 ul {
     display: flex;
     justify-content: center;
     padding-inline-start: 0px;
 }
+
 .menuPrincipal ul li{
     list-style: none;
     display: inline;
 }
 
-/****************** SECTION YOUR PROFILE ******************/
+/****************** CONTENIDO DASHBOARD ******************/
 
-#containUserProfile{
+#containAdminDashboard{
     display:flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
 }
 
-#yourProfile{
+#yourDashboard{
     width: 500px;
     height: auto;
     min-height: 600px;
@@ -84,7 +80,7 @@ ul {
     flex-direction: column;
 }
 
-#yourProfile h3{
+#yourDashboard h3{
     font-family: 'outfit';
     font-size: 26px;
     font-weight: bold;
@@ -93,7 +89,7 @@ ul {
     margin: 12px;
 }
 
-.fieldsetOptions{
+.inputOptions{
     width: 280px;
     height: 40px;
     margin: 12px;
@@ -114,16 +110,16 @@ ul {
     margin: 12px;
 }
 
-.profileButtons{
+.adminButtons{
     border-radius: 8px;
     cursor: pointer;
     width: 88px;
 }
 
-#cancelButton{
+#deleteButton{
     color: #1B1C1E;
     background: transparent;
-    border: 2px solid #ffc954;
+    border: 2px solid #eb4747;
     border-radius: 6px;
     margin-right: 50px;
     font-family: 'outfit';
@@ -131,12 +127,12 @@ ul {
     padding: 8px;
 }
 
-#cancelButton:hover{
+#deleteButton:hover{
     color: #F7F8F9;
-    background: #ffc954;
+    background: #eb4747;
 }
 
-#saveButton{
+#botonCreador{
     color: #1B1C1E;
     background: transparent;
     border: 2px solid #97a33d;
@@ -147,13 +143,9 @@ ul {
     padding: 8px;
 }
 
-#saveButton:hover{
+#botonCreador:hover{
     color: #F7F8F9;
     background: #97a33d;
-}
-
-#userImage{
-    width: 500px;
 }
 
 #adminImage{
@@ -214,38 +206,4 @@ ul {
 
 .menuResponsive li a img{
     width: 30px;
-}
-
-/****************** FOOTER ICONS ******************/
-
-#iconHome{
-    color: #F7F8F9;
-}
-
-#iconHome:hover{
-    color: #29C4F8;
-}
-
-#iconUser{
-    color: #29C4F8;
-}
-
-#iconUser:hover{
-    color: #29C4F8;
-}
-
-#iconFavorites{
-    color: #F7F8F9;
-}
-
-#iconFavorites:hover{
-    color: #29C4F8;
-}
-
-#iconLogOut{
-    color: #F7F8F9;
-}
-
-#iconLogOut:hover{
-    color: #29C4F8;
 }
