@@ -19,11 +19,11 @@ html
          nav#headerMenu.menuPrincipal
             ul#pcMenu.menuPc
                li
+                  a(href='./dashboard_admin')#dashboardColor Crear o eliminar
+               li
                   a(href='./profile_admin') Tu cuenta
                li
-                  a(href='./dashboard')#dashboardColor Crear o eliminar
-               li
-                a(href='./logout') Salir
+                  a(href='./logout') Salir   
 
    div#containAdminDashboard
       form#yourDashboard(action="/dashboard" method="post")

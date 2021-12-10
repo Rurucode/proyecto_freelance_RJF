@@ -12,18 +12,16 @@ head
 body#body
 
    header#header
-      a(href='./')
+      a(href='./home_admin')
          img#logotipo.logotipoSuperior(src='../assets/images/logotipo_final_black.png' alt='logotipoHome')
       nav#headerMenu.menuPrincipal
          ul#pcMenu.menuPc
-            li
-               a(href='./home_admin') Inicio
             li
                a(href='./dashboard_admin') Crear o eliminar
             li
                a(href='./profile_admin')#profileColor Tu cuenta
             li
-               a(href='./logout') Salir
+               a(href='./logout') Salir   
 
    div#containUserProfile
       form#yourProfile(action="/profile" method="post")
